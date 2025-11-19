@@ -1,0 +1,1416 @@
+number,german,english,article,german_sentence,english_sentence
+1,das,the,,Das ist das Buch.,That is the book.
+2,und,and,,Ich und du.,Me and you.
+3,sein,to be,,Ich bin müde.,I am tired.
+4,in,in,,In der Schule.,In the school.
+5,ein,a/an,,Ein Apfel.,An apple.
+6,zu,to,,Zum Bahnhof.,To the train station.
+7,haben,to have,,Ich habe Hunger.,I am hungry.
+8,ich,I,,Ich komme.,I am coming.
+9,werden,to become,,Es wird kalt.,It is getting cold.
+10,der,the,m,Der Mann.,The man.
+11,sie,they/she/it,,Sie sind hier.,They are here.
+12,von,of/from,,Von Berlin.,From Berlin.
+13,nicht,not,,Nicht jetzt.,Not now.
+14,die,the,f,Die Frau.,The woman.
+15,mit,with,,Mit dir.,With you.
+16,es,it,,Es regnet.,It is raining.
+17,auf,on,,Auf dem Tisch.,On the table.
+18,sich,himself/herself/itself,,Er wäscht sich.,He washes himself.
+19,dass,that,,Ich weiß,dass...
+20,er,he,,Er läuft.,He runs.
+21,als,as/than,,Als Kind.,As a child.
+22,an,to/at,,An der Wand.,On the wall.
+23,für,for,,Für dich.,For you.
+24,ist,is,,Es ist gut.,It is good.
+25,zu,to,,Zu Hause.,At home.
+26,aus,out of,,Aus Deutschland.,From Germany.
+27,um,around/at,,Um 8 Uhr.,At 8 o'clock.
+28,nach,after/to,,Nach Hause.,Home.
+29,bei,at/by,,Bei mir.,At my place.
+30,sein,his/its/to be,,Sein Auto.,His car.
+31,oder,or,,Tea oder Kaffee?,Tea or coffee?
+32,wie,how/as,,Wie geht's?,How are you?
+33,aber,but,,Aber nein!,But no!
+34,mehr,more,,Mehr Wasser.,More water.
+35,einen,a/an,m,Einen Moment.,One moment.
+36,man,one/people,,Man sagt...,People say...
+37,so,so/thus,,So ist es.,That's how it is.
+38,was,what,,Was ist das?,What is that?
+39,nur,only,,Nur du.,Only you.
+40,wie,like/as,,Wie ein Kind.,Like a child.
+41,über,about/over,,Über das Buch.,About the book.
+42,auch,also/too,,Ich auch.,Me too.
+43,du,you,,Du bist hier.,You are here.
+44,im,in the,,Im Sommer.,In the summer.
+45,noch,still/yet,,Noch nicht.,Not yet.
+46,wenn,if/when,,Wenn es regnet.,If it rains.
+47,sagen,to say,,Er sagt nein.,He says no.
+48,machen,to do/make,,Was machst du?,What are you doing?
+49,können,can/be able,,Ich kann kommen.,I can come.
+50,kommen,to come,,Komm her!,Come here!
+51,vor,before/in front of,,Vor dem Haus.,In front of the house.
+52,gehen,to go,,Ich gehe jetzt.,I'm going now.
+53,wollen,to want,,Ich will das.,I want that.
+54,gut,good,,Sehr gut!,Very good!
+55,geben,to give,,Gib mir das.,Give me that.
+56,da,there,,Da drüben.,Over there.
+57,schon,already,,Schon fertig?,Already done?
+58,wieder,again,,Noch einmal wieder.,Once again.
+59,sehen,to see,,Ich sehe dich.,I see you.
+60,lassen,to let/leave,,Lass mich!,Let me!
+61,dann,then,,Dann gehe ich.,Then I'll go.
+62,sehr,very,,Sehr schön.,Very nice.
+63,hier,here,,Hier bitte.,Here you go.
+64,jetzt,now,,Jetzt sofort!,Now immediately!
+65,immer,always,,Immer wieder.,Again and again.
+66,den,the,m,Den ganzen Tag.,The whole day.
+67,kein,no/none,,Kein Problem.,No problem.
+68,etwas,something,,Etwas Wasser.,Some water.
+69,haben,to have,,Wir haben Zeit.,We have time.
+70,ihm,him,,Gib ihm das.,Give it to him.
+71,ja,yes,,Ja,klar.
+72,müssen,to have to,,Ich muss gehen.,I have to go.
+73,ihre,her/their,,Ihre Tasche.,Her bag.
+74,mal,times/once,,Einmal bitte.,Once please.
+75,uns,us,,Hilf uns!,Help us!
+76,ihnen,them/to them,,Gib ihnen das.,Give it to them.
+77,durch,through,,Durch den Park.,Through the park.
+78,alles,everything/all,,Alles klar?,All good?
+79,wo,where,,Wo bist du?,Where are you?
+80,mir,me/to me,,Gib mir...,Give me...
+81,wir,we,,Wir gehen.,We go.
+82,zur,to the,,Zur Schule.,To school.
+83,unsere,our,,Unsere Familie.,Our family.
+84,wird,becomes/is,,Es wird dunkel.,It gets dark.
+85,euch,you (pl.),,Ich sehe euch.,I see you all.
+86,dein,your,,Dein Buch.,Your book.
+87,aus,out,,Raus hier!,Out here!
+88,zurück,back,,Komm zurück!,Come back!
+89,deutsch,German,,Auf Deutsch.,In German.
+90,jahr,year,,Letztes Jahr.,Last year.
+91,leben,to live,,Ich lebe hier.,I live here.
+92,groß,big,,Ein großes Haus.,A big house.
+93,war,was,,Es war schön.,It was nice.
+94,soll,should/shall,,Das soll ich machen.,I should do that.
+95,zeit,time,,Keine Zeit.,No time.
+96,weg,way/away,,Geh weg!,Go away!
+97,denn,because,,Komm denn!,Come on then!
+98,viel,much/a lot,,Viel Glück!,Good luck!
+99,wissen,to know,,Ich weiß nicht.,I don't know.
+100,unter,under,,Unter dem Tisch.,Under the table.
+101,noch,still,,Noch ein Bier?,Another beer?
+102,dieser,this,,Dieser Mann.,This man.
+103,besser,better,,Viel besser.,Much better.
+104,wieder,again,,Wieder da?,Back again?
+105,neu,new,,Ein neues Auto.,A new car.
+106,lang,long,,Wie lange?,How long?
+107,viel,many/a lot,,Viele Leute.,Many people.
+108,heute,today,,Heute Abend.,Tonight.
+109,alle,all,,Alle zusammen.,All together.
+110,frau,woman,,Die Frau dort.,The woman there.
+111,geld,money,,Kein Geld.,No money.
+112,tag,day,,Guten Tag!,Good day!
+113,bleiben,to stay,,Ich bleibe hier.,I stay here.
+114,ende,end,,Am Ende.,At the end.
+115,warum,why,,Warum nicht?,Why not?
+116,wurde,became/was,,Es wurde kalt.,It got cold.
+117,beide,both,,Beide Hände.,Both hands.
+118,dort,there,,Dort drüben.,Over there.
+119,welt,world,,Die ganze Welt.,The whole world.
+120,letzte,last,,Letzte Woche.,Last week.
+121,zwischen,between,,Zwischen uns.,Between us.
+122,wer,who,,Wer ist das?,Who is that?
+123,stadt,city,,In der Stadt.,In the city.
+124,kind,child,,Das Kind spielt.,The child plays.
+125,deutsche,German (pl.),,Deutsche Sprache.,German language.
+126,land,country,,In Deutschland.,In Germany.
+127,arbeiten,to work,,Ich arbeite.,I work.
+128,während,during,,Während des Films.,During the movie.
+129,haus,house,n,Mein Haus.,My house.
+130,machen,to make/do,,Mach das!,Do that!
+131,hand,hand,f,Eine Hand.,One hand.
+132,zwei,two,,Zwei Bier.,Two beers.
+133,sagen,to say/tell,,Sag mir!,Tell me!
+134,leben,life,,Das Leben.,Life.
+135,mann,man,m,Der alte Mann.,The old man.
+136,jeder,every/each,,Jeder Tag.,Every day.
+137,name,name,m,Dein Name?,Your name?
+138,werden,will/future,,Ich werde kommen.,I will come.
+139,weg,way/path,,Der Weg.,The way.
+140,frauen,women,,Viele Frauen.,Many women.
+141,zurück,back,,Zurückkommen.,Come back.
+142,finden,to find,,Ich finde es.,I find it.
+143,polizei,police,f,Die Polizei kommt.,The police are coming.
+144,frage,question,f,Eine Frage.,A question.
+145,recht,right/law,,Du hast recht.,You are right.
+146,nie,never,,Nie wieder.,Never again.
+147,schön,nice/beautiful,,Sehr schön!,Very nice!
+148,geld,money,n,Viel Geld.,A lot of money.
+149,mensch,person/human,m,Der Mensch.,The person.
+150,sache,thing,f,Eine Sache.,One thing.
+151,drei,three,,Drei Tage.,Three days.
+152,nicht,not,,Nicht wahr?,Isn't that so?
+153,können,to be able to,,Kannst du?,Can you?
+154,deutschland,Germany,,In Deutschland.,In Germany.
+155,gut,well/good,,Gut gemacht!,Well done!
+156,wort,word,n,Ein Wort.,One word.
+157,woche,week,f,Diese Woche.,This week.
+158,gegen,against,,Gegen dich.,Against you.
+159,weit,further/far,,Weitergehen.,Go further.
+160,ohne,without,,Ohne dich.,Without you.
+161,einmal,once,,Einmal nur.,Just once.
+162,uhr,clock/o'clock,f,Wie spät ist es?,What time is it?
+163,stehen,to stand,,Ich stehe auf.,I stand up.
+164,familie,family,f,Meine Familie.,My family.
+165,liegen,to lie,,Es liegt dort.,It lies there.
+166,bleiben,to remain,,Bleib hier!,Stay here!
+167,später,later,,Bis später!,See you later!
+168,morgen,tomorrow/morning,,Morgen früh.,Tomorrow morning.
+169,dann,then,,Und dann?,And then?
+170,nehmen,to take,,Nimm das!,Take that!
+171,halten,to hold/stop,,Halt an!,Stop!
+172,auto,car,n,Mein Auto.,My car.
+173,habe,I have,,Ich habe es.,I have it.
+174,ab,from/off,,Ab morgen.,From tomorrow.
+175,erste,first,,Der erste Platz.,First place.
+176,lassen,to let,,Lass uns gehen.,Let's go.
+177,schauen,to look,,Schau mal!,Look!
+178,wasser,water,n,Kaltes Wasser.,Cold water.
+179,lange,long (time),,Wie lange?,How long?
+180,genug,enough,,Genug jetzt!,Enough now!
+181,gibt,gives/there is,,Es gibt...,There is...
+182,tun,to do,,Was tust du?,What are you doing?
+183,junge,boy,m,Der kleine Junge.,The little boy.
+184,platz,place/square,m,Am Platz.,At the square.
+185,einfach,simple,,Ganz einfach.,Very simple.
+186,ende,end,n,Das Ende.,The end.
+187,glauben,to believe,,Ich glaube nicht.,I don't believe.
+188,möglich,possible,,Ist das möglich?,Is that possible?
+189,minute,minute,f,Eine Minute.,One minute.
+190,freund,friend,m,Mein bester Freund.,My best friend.
+191,mädchen,girl,n,Das Mädchen.,The girl.
+192,arbeiten,to work,,Bei der Arbeit.,At work.
+193,müde,tired,,Ich bin müde.,I am tired.
+194,alt,old,,Wie alt?,How old?
+195,tag,day,m,Der ganze Tag.,The whole day.
+196,beispiel,example,n,Zum Beispiel.,For example.
+197,wichtig,important,,Sehr wichtig.,Very important.
+198,sprechen,to speak,,Sprich Deutsch!,Speak German!
+199,weg,away,,Weggehen.,Go away.
+200,bringen,to bring,,Bring mir...,Bring me...
+201,nacht,night,f,Gute Nacht!,Good night!
+202,kopf,head,m,Mein Kopf.,My head.
+203,liebe,love,f,In Liebe.,With love.
+204,denken,to think,,Ich denke...,I think...
+205,heißt,is called,,Wie heißt du?,What's your name?
+206,kommen,to come,,Komm schnell!,Come quickly!
+207,fast,almost,,Fast fertig.,Almost done.
+208,machen,to make,,Mach schnell!,Hurry up!
+209,hören,to hear,,Hör zu!,Listen!
+210,lassen,to leave,,Lass es!,Leave it!
+211,schlafen,to sleep,,Ich will schlafen.,I want to sleep.
+212,essen,to eat,,Ich esse jetzt.,I'm eating now.
+213,trinken,to drink,,Was trinkst du?,What are you drinking?
+214,finden,to find,,Wo finde ich...?,Where do I find...?
+215,schreiben,to write,,Schreib mir!,Write to me!
+216,lesen,to read,,Ich lese.,I am reading.
+217,lernen,to learn,,Deutsch lernen.,Learn German.
+218,verstehen,to understand,,Verstehst du?,Do you understand?
+219,fragen,to ask,,Darf ich fragen?,May I ask?
+220,antworten,to answer,,Antworte mir!,Answer me!
+221,helfen,to help,,Kannst du helfen?,Can you help?
+222,öffnen,to open,,Mach auf!,Open up!
+223,schließen,to close,,Mach zu!,Close!
+224,zahlen,to pay,,Ich zahle.,I'll pay.
+225,kaufen,to buy,,Was kaufst du?,What are you buying?
+226,verkaufen,to sell,,Zu verkaufen.,For sale.
+227,kosten,to cost,,Wie viel kostet das?,How much does it cost?
+228,teuer,expensive,,Zu teuer!,Too expensive!
+229,billig,cheap,,Sehr billig.,Very cheap.
+230,groß,big/large,,Zu groß.,Too big.
+231,klein,small,,Zu klein.,Too small.
+232,schön,beautiful,,Wie schön!,How beautiful!
+233,hässlich,ugly,,Nicht hässlich.,Not ugly.
+234,warm,warm,,Es ist warm.,It is warm.
+235,kalt,cold,,Mir ist kalt.,I am cold.
+236,heiß,hot,,Sehr heiß.,Very hot.
+237,gut,good,,Gut gemacht!,Well done!
+238,schlecht,bad,,Schlecht für dich.,Bad for you.
+239,richtig,right/correct,,Das ist richtig.,That's correct.
+240,falsch,wrong,,Total falsch.,Totally wrong.
+241,leicht,easy,,Ganz leicht.,Very easy.
+242,schwer,difficult,,Zu schwer.,Too difficult.
+243,schnell,fast,,Sehr schnell.,Very fast.
+244,langsam,slow,,Geh langsam!,Go slowly!
+245,früh,early,,Zu früh.,Too early.
+246,spät,late,,Zu spät!,Too late!
+247,heute,today,,Heute nicht.,Not today.
+248,morgen,tomorrow,,Bis morgen!,See you tomorrow!
+249,gestern,yesterday,,Gestern Abend.,Yesterday evening.
+250,bald,soon,,Bis bald!,See you soon!
+251,jetzt,now,,Jetzt oder nie!,Now or never!
+252,sofort,immediately,,Sofort kommen!,Come immediately!
+253,bitte,please,,Bitte schön.,You're welcome.
+254,danke,thank you,,Vielen Dank!,Thank you very much!
+255,entschuldigung,sorry/excuse me,,Entschuldigung!,Sorry!
+256,hallo,hello,,Hallo zusammen!,Hello everyone!
+257,tschüss,bye,,Tschüss dann!,Bye then!
+258,ja,yes,,Ja genau.,Yes exactly.
+259,nein,no,,Nein danke.,No thank you.
+260,vielleicht,maybe,,Vielleicht später.,Maybe later.
+261,natürlich,of course,,Natürlich!,Of course!
+262,klar,clear/sure,,Klar doch!,Sure!
+263,genau,exactly,,Genau das.,Exactly that.
+264,stimmt,right (agreed),,Stimmt!,Right!
+265,okay,okay,,Okay,gut.
+266,super,great,,Super Idee!,Great idea!
+267,toll,great,,Total toll!,Totally great!
+268,schade,pity,,Wie schade!,What a pity!
+269,leider,unfortunately,,Leider nicht.,Unfortunately not.
+270,gern,gladly,,Sehr gern!,With pleasure!
+271,gerne,gladly,,Ich komme gerne.,I'll gladly come.
+272,willkommen,welcome,,Herzlich willkommen!,Warm welcome!
+273,prost,cheers,,Prost!,Cheers!
+274,gesundheit,bless you,,Gesundheit!,Bless you!
+275,viel,much,,Vielen Dank!,Many thanks!
+276,wenig,little,,Zu wenig.,Too little.
+277,alle,all,,Alle zusammen!,All together!
+278,jeder,everyone,,Jeder weiß das.,Everyone knows that.
+279,niemand,nobody,,Niemand da.,Nobody there.
+280,etwas,something,,Etwas Neues.,Something new.
+281,nichts,nothing,,Nichts los.,Nothing going on.
+282,alles,everything,,Alles gut?,Everything okay?
+283,irgendwo,somewhere,,Irgendwo hier.,Somewhere here.
+284,nirgendwo,nowhere,,Nirgendwo finden.,Can't find anywhere.
+285,überall,everywhere,,Überall Leute.,People everywhere.
+286,hier,here,,Hier bleiben.,Stay here.
+287,dort,there,,Dort drüben.,Over there.
+288,links,left,,Nach links.,To the left.
+289,rechts,right,,Nach rechts.,To the right.
+290,gerade,straight,,Geradeaus.,Straight ahead.
+291,oben,above,,Oben drauf.,On top.
+292,unten,below,,Unten drunter.,Underneath.
+293,vor,front/in front,,Vor dem Haus.,In front of the house.
+294,hinter,behind,,Hinter dir.,Behind you.
+295,neben,next to,,Neben mir.,Next to me.
+296,in,in/into,,In die Tasche.,Into the pocket.
+297,aus,out of,,Aus dem Weg!,Out of the way!
+298,an,on/to,,An die Wand.,On the wall.
+299,auf,on/onto,,Auf den Tisch.,On the table.
+300,unter,under,,Unter dem Bett.,Under the bed.
+301,über,over,,Über die Brücke.,Over the bridge.
+302,zwischen,between,,Zwischen zwei Stühlen.,Between two chairs.
+303,bei,at/by,,Bei Freunden.,At friends' place.
+304,gegen,against,,Gegen die Wand.,Against the wall.
+305,ohne,without,,Ohne Zucker.,Without sugar.
+306,mit,with,,Mit Milch.,With milk.
+307,für,for,,Für dich.,For you.
+308,von,from/of,,Von mir.,From me.
+309,zu,to,,Zu dir.,To you.
+310,nach,to/after,,Nach Hause.,Home.
+311,vor,before,,Vor zwei Jahren.,Two years ago.
+312,seit,since,,Seit gestern.,Since yesterday.
+313,bis,until,,Bis später!,Until later!
+314,während,during,,Während der Pause.,During the break.
+315,wegen,because of,,Wegen dir.,Because of you.
+316,trotz,despite,,Trotz Regen.,Despite rain.
+317,durch,through,,Durch die Stadt.,Through the city.
+318,um,around,,Um die Ecke.,Around the corner.
+319,entlang,along,,Die Straße entlang.,Along the street.
+320,gegenüber,opposite,,Gegenüber vom Bahnhof.,Opposite the station.
+321,neben,next to,,Neben dem Park.,Next to the park.
+322,hinter,behind,,Hinter dem Baum.,Behind the tree.
+323,vor,in front of,,Vor der Tür.,In front of the door.
+324,unter,under,,Unter dem Tisch.,Under the table.
+325,auf,on,,Auf dem Dach.,On the roof.
+326,in,in,,In der Küche.,In the kitchen.
+327,aus,out of,,Aus dem Fenster.,Out of the window.
+328,an,at/on,,An der Haltestelle.,At the stop.
+329,zu,to,,Zum Arzt.,To the doctor.
+330,ich,I,,Ich bin's.,It's me.
+331,du,you,,Du zuerst.,You first.
+332,er,he,,Er kommt.,He is coming.
+333,sie,she,,Sie läuft.,She runs.
+334,es,it,,Es regnet.,It rains.
+335,wir,we,,Wir bleiben.,We stay.
+336,ihr,you (pl.),,Ihr seid toll.,You are great.
+337,sie,they,,Sie kommen.,They come.
+338,mich,me,,Sieh mich an!,Look at me!
+339,dich,you,,Ich liebe dich.,I love you.
+340,ihn,him,,Ich sehe ihn.,I see him.
+341,sie,her,,Ich liebe sie.,I love her.
+342,uns,us,,Hilf uns!,Help us!
+343,euch,you (pl.),,Ich rufe euch.,"How to say ""I call you all""?"
+344,ihnen,them,,Gib ihnen das.,Give them that.
+345,mein,my,,Mein Name.,My name.
+346,dein,your,,Dein Hund.,Your dog.
+347,sein,his/its,,Sein Freund.,His friend.
+348,ihr,her/their,,Ihr Buch.,Her book.
+349,unser,our,,Unser Haus.,Our house.
+350,euer,your (pl.),,Euer Auto.,Your car.
+351,ihr,their,,Ihr Problem.,Their problem.
+352,dieser,this (m),,Dieser Tag.,This day.
+353,diese,this (f),,Diese Frau.,This woman.
+354,dieses,this (n),,Dieses Kind.,This child.
+355,dies,these,,Diese Leute.,These people.
+356,jener,that (m),,Jener Mann.,That man.
+357,jene,that (f),,Jene Stadt.,That city.
+358,jenes,that (n),,Jenes Buch.,That book.
+359,jene,those,,Jene Zeiten.,Those times.
+360,welcher,which (m),,Welcher Weg?,Which way?
+361,welche,which (f),,Welche Farbe?,Which color?
+362,welches,which (n),,Welches Haus?,Which house?
+363,welche,which (pl.),,Welche Bücher?,Which books?
+364,mein,my,,Mein Freund.,My friend.
+365,dein,your,,Deine Schwester.,Your sister.
+366,sein,his,,Sein Bruder.,His brother.
+367,ihr,her,,Ihre Mutter.,Her mother.
+368,unser,our,,Unsere Kinder.,Our children.
+369,euer,your (pl.),,Eure Eltern.,Your parents.
+370,ihr,their,,Ihre Freunde.,Their friends.
+371,kein,no (m),,Kein Geld.,No money.
+372,keine,no (f),,Keine Zeit.,No time.
+373,kein,no (n),,Kein Problem.,No problem.
+374,keine,no (pl.),,Keine Lust.,No desire.
+375,ein,a (m),,Ein Mann.,A man.
+376,eine,a (f),,Eine Frau.,A woman.
+377,ein,a (n),,Ein Kind.,A child.
+378,einen,a (m acc.),,Einen Apfel.,An apple.
+379,eine,a (f acc.),,Eine Katze.,A cat.
+380,ein,a (n acc.),,Ein Auto.,A car.
+381,eins,one,,Eins,zwei
+382,zwei,two,,Zwei Euro.,Two euros.
+383,drei,three,,Drei Personen.,Three people.
+384,vier,four,,Vier Wochen.,Four weeks.
+385,fünf,five,,Fünf Minuten.,Five minutes.
+386,sechs,six,,Sechs Uhr.,Six o'clock.
+387,sieben,seven,,Sieben Tage.,Seven days.
+388,acht,eight,,Acht Stunden.,Eight hours.
+389,neun,nine,,Neun Leben.,Nine lives.
+390,zehn,ten,,Zehn Finger.,Ten fingers.
+391,elf,eleven,,Elf Spieler.,Eleven players.
+392,zwölf,twelve,,Zwölf Monate.,Twelve months.
+393,zwanzig,twenty,,Zwanzig Jahre.,Twenty years.
+394,dreißig,thirty,,Dreißig Minuten.,Thirty minutes.
+395,vierzig,forty,,Vierzig Prozent.,Forty percent.
+396,fünfzig,fifty,,Fünfzig Euro.,Fifty euros.
+397,sechzig,sixty,,Sechzig Sekunden.,Sixty seconds.
+398,siebzig,seventy,,Siebzig Jahre.,Seventy years.
+399,achtzig,eighty,,Achtzig Kilometer.,Eighty kilometers.
+400,neunzig,ninety,,Neunzig Tage.,Ninety days.
+401,hundert,hundred,,Hundert Leute.,Hundred people.
+402,tausend,thousand,,Tausend Dank!,A thousand thanks!
+403,erster,first (m),,Der erste Platz.,First place.
+404,zweite,second (f),,Die zweite Chance.,The second chance.
+405,dritte,third (n),,Das dritte Mal.,The third time.
+406,letzte,last (m),,Der letzte Tag.,The last day.
+407,nächste,next (f),,Die nächste Woche.,Next week.
+408,vorige,previous (n),,Das vorige Jahr.,The previous year.
+409,wie,how,,Wie bitte?,Pardon?
+410,warum,why,,Warum fragst du?,Why do you ask?
+411,wo,where,,Wo wohnst du?,Where do you live?
+412,wann,when,,Wann kommst du?,When are you coming?
+413,wer,who,,Wer ist da?,Who is there?
+414,was,what,,Was machst du?,What are you doing?
+415,welcher,which,,Welcher Bus?,Which bus?
+416,wieviel,how much,,Wieviel kostet das?,How much does it cost?
+417,wieviele,how many,,Wieviele Leute?,How many people?
+418,ja,yes,,Ja,gerne.
+419,nein,no,,Nein,danke.
+420,oder,or,,Kaffee oder Tee?,Coffee or tea?
+421,und,and,,Brot und Butter.,Bread and butter.
+422,aber,but,,Aber ja!,But yes!
+423,weil,because,,Weil ich müde bin.,Because I am tired.
+424,dass,that,,Ich weiß,dass...
+425,ob,whether/if,,Ich weiß nicht,ob...
+426,wenn,if/when,,Wenn du willst.,If you want.
+427,als,when/as,,Als ich klein war.,When I was little.
+428,bevor,before,,Bevor du gehst.,Before you go.
+429,nachdem,after,,Nachdem ich gegessen habe.,After I ate.
+430,damit,so that,,Damit du verstehst.,So that you understand.
+431,obwohl,although,,Obwohl es regnet.,Although it rains.
+432,während,while,,Während du schläfst.,While you sleep.
+433,seit,since,,Seit ich hier bin.,Since I am here.
+434,bis,until,,Bis du kommst.,Until you come.
+435,außer,except,,Außer montags.,Except Mondays.
+436,sonst,or else,,Beeil dich,sonst...
+437,trotzdem,nevertheless,,Trotzdem danke.,Thanks anyway.
+438,deshalb,therefore,,Deshalb komme ich.,That's why I'm coming.
+439,darum,therefore,,Darum sage ich...,That's why I say...
+440,denn,because,,Komm denn her!,Come here then!
+441,nämlich,namely,,Ich meine nämlich...,I mean namely...
+442,also,so/thus,,Also gut.,Alright then.
+443,nun,now,,Nun ja.,Well now.
+444,eigentlich,actually,,Eigentlich nicht.,Actually not.
+445,vielleicht,perhaps,,Vielleicht morgen.,Perhaps tomorrow.
+446,sicher,sure/certainly,,Sicher doch!,Sure!
+447,bestimmt,definitely,,Bestimmt nicht.,Definitely not.
+448,wahrscheinlich,probably,,Wahrscheinlich ja.,Probably yes.
+449,hoffentlich,hopefully,,Hoffentlich nicht.,Hopefully not.
+450,leider,unfortunately,,Leider nein.,Unfortunately no.
+451,glücklicherweise,fortunately,,Glücklicherweise ja.,Fortunately yes.
+452,natürlich,naturally,,Natürlich!,Naturally!
+453,klar,clearly,,Klar,kein Problem.
+454,genau,exactly,,Genau richtig.,Exactly right.
+455,richtig,correct,,Ganz richtig.,Quite correct.
+456,falsch,wrong,,Völlig falsch.,Completely wrong.
+457,wahr,TRUE,,Ist das wahr?,Is that true?
+458,unwahr,FALSE,,Das ist unwahr.,That's false.
+459,möglich,possible,,Alles ist möglich.,Everything is possible.
+460,unmöglich,impossible,,Das ist unmöglich.,That's impossible.
+461,gut,good,,Gut zu wissen.,Good to know.
+462,besser,better,,Besser als nichts.,Better than nothing.
+463,schlecht,bad,,Schlechte Idee.,Bad idea.
+464,schlimm,terrible,,Wie schlimm!,How terrible!
+465,toll,great,,Toll gemacht!,Great job!
+466,super,super,,Super toll!,Super great!
+467,fantastisch,fantastic,,Fantastisch!,Fantastic!
+468,wunderbar,wonderful,,Wunderbar!,Wonderful!
+469,herrlich,gorgeous,,Herrliches Wetter!,Gorgeous weather!
+470,schrecklich,terrible,,Schrecklich kalt.,Terribly cold.
+471,furchtbar,awful,,Furchtbar laut.,Awfully loud.
+472,ekelhaft,disgusting,,Ekelhaft!,Disgusting!
+473,eklig,gross,,Total eklig.,Totally gross!
+474,lustig,funny,,Sehr lustig!,Very funny!
+475,komisch,strange/funny,,Komisch,oder?
+476,seltsam,strange,,Sehr seltsam.,Very strange.
+477,normal,normal,,Ganz normal.,Totally normal.
+478,gewöhnlich,usual,,Wie gewöhnlich.,As usual.
+479,besonders,especially,,Besonders gut.,Especially good.
+480,außergewöhnlich,extraordinary,,Außergewöhnlich schön.,Extraordinarily beautiful.
+481,einfach,simply,,Einfach super.,Simply super.
+482,schwierig,difficult,,Sehr schwierig.,Very difficult.
+483,leicht,easy,,Leicht gesagt.,Easily said.
+484,schnell,quick,,Schnell machen!,Do it quick!
+485,langsam,slow,,Langsam fahren.,Drive slowly.
+486,laut,loud,,Zu laut!,Too loud!
+487,leise,quiet,,Leise sein!,Be quiet!
+488,hoch,high,,Hoch hinaus!,Up high!
+489,tief,deep/low,,Tief im Wald.,Deep in the forest.
+490,breit,wide,,Breite Straße.,Wide street.
+491,schmal,narrow,,Schmaler Weg.,Narrow path.
+492,lang,long,,Langer Weg.,Long way.
+493,kurz,short,,Kurze Pause.,Short break.
+494,dick,thick/fat,,Dicker Pullover.,Thick sweater.
+495,dünn,thin,,Dünnes Eis.,Thin ice.
+496,stark,strong,,Starker Kaffee.,Strong coffee.
+497,schwach,weak,,Schwaches Signal.,Weak signal.
+498,reich,rich,,Sehr reich.,Very rich.
+499,arm,poor,,Arm dran.,Poor thing.
+500,glücklich,happy,,Ich bin glücklich.,I am happy.
+501,traurig,sad,,Ich bin traurig.,I am sad.
+502,fröhlich,cheerful,,Fröhlich sein!,Be cheerful!
+503,wütend,angry,,Ich bin wütend!,I am angry!
+504,böse,angry,,Böse auf dich.,Angry with you.
+505,froh,glad,,Ich bin froh.,I am glad.
+506,stolz,proud,,Ich bin stolz.,I am proud.
+507,eifersüchtig,jealous,,Bist du eifersüchtig?,Are you jealous?
+508,neidisch,envious,,Neidisch sein.,Be envious.
+509,verliebt,in love,,Verliebt sein.,Be in love.
+510,einsam,lonely,,Ich fühle mich einsam.,I feel lonely.
+511,müde,tired,,Total müde.,Totally tired.
+512,wach,awake,,Hellwach.,Wide awake.
+513,hungrig,hungry,,Ich bin hungrig.,I am hungry.
+514,durstig,thirsty,,Mir ist durstig.,I am thirsty.
+515,krank,sick,,Ich bin krank.,I am sick.
+516,gesund,healthy,,Bleib gesund!,Stay healthy!
+517,tot,dead,,Tot müde.,Dead tired.
+518,lebendig,alive,,Lebendig begraben.,Buried alive.
+519,tot,dead,,Mausetot.,Dead as a doornail.
+520,jung,young,,Jung geblieben.,Stayed young.
+521,alt,old,,Alt werden.,Get old.
+522,neu,new,,Brandneu.,Brand new.
+523,gebraucht,used,,Gebraucht kaufen.,Buy used.
+524,sauber,clean,,Sauber machen.,Clean up.
+525,schmutzig,dirty,,Schmutzige Wäsche.,Dirty laundry.
+526,voll,full,,Voll tanken.,Fill up.
+527,leer,empty,,Leer ausgehen.,Come away empty-handed.
+528,offen,open,,Offen sein.,Be open.
+529,geschlossen,closed,,Geschlossen heute.,Closed today.
+530,warm,warm,,Warm anziehen.,Dress warm.
+531,kalt,cold,,Kalt duschen.,Cold shower.
+532,heiß,hot,,Heißer Tee.,Hot tea.
+533,kühl,cool,,Kühl lagern.,Store cool.
+534,nass,wet,,Nass bis auf die Haut.,Wet to the skin.
+535,trocken,dry,,Trocken bleiben.,Stay dry.
+536,hell,bright,,Hell leuchten.,Shine bright.
+537,dunkel,dark,,Dunkel werden.,Get dark.
+538,klar,clear,,Klarer Himmel.,Clear sky.
+539,trüb,cloudy,,Trübes Wetter.,Cloudy weather.
+540,sonnig,sunny,,Sonniger Tag.,Sunny day.
+541,regnerisch,rainy,,Regnerisches Wetter.,Rainy weather.
+542,windig,windy,,Windig heute.,Windy today.
+543,stürmisch,stormy,,Stürmisches Wetter.,Stormy weather.
+544,schnee,snow,,Es schneit.,It is snowing.
+545,eis,ice,,Glattes Eis.,Slippery ice.
+546,nebel,fog,,Dichter Nebel.,Thick fog.
+547,wolke,cloud,,Wolken am Himmel.,Clouds in the sky.
+548,regen,rain,,Es regnet.,It is raining.
+549,schnee,snow,,Schnee fällt.,Snow is falling.
+550,sturm,storm,,Sturm kommt.,Storm is coming.
+551,blitz,lightning,,Blitz und Donner.,Lightning and thunder.
+552,donner,thunder,,Lauter Donner.,Loud thunder.
+553,mond,moon,,Vollmond.,Full moon.
+554,sonne,sun,,Die Sonne scheint.,The sun is shining.
+555,stern,star,,Sternenhimmel.,Starry sky.
+556,himmel,sky/heaven,,Blauer Himmel.,Blue sky.
+557,erde,earth,,Auf der Erde.,On earth.
+558,meer,sea,,Am Meer.,At the sea.
+559,fluss,river,,Der Fluss.,The river.
+560,berg,mountain,,Hoher Berg.,High mountain.
+561,tal,valley,,Im Tal.,In the valley.
+562,wald,forest,,Im Wald.,In the forest.
+563,baum,tree,,Alter Baum.,Old tree.
+564,blume,flower,,Schöne Blume.,Beautiful flower.
+565,gras,grass,,Grünes Gras.,Green grass.
+566,tier,animal,,Wildes Tier.,Wild animal.
+567,hund,dog,,Mein Hund.,My dog.
+568,katze,cat,,Die Katze miaut.,The cat meows.
+569,vogel,bird,,Der Vogel singt.,The bird sings.
+570,fisch,fish,,Frischer Fisch.,Fresh fish.
+571,pferd,horse,,Reites Pferd.,Riding horse.
+572,kuh,cow,,Die Kuh muht.,The cow moos.
+573,schwein,pig,,Das Schwein grunzt.,The pig grunts.
+574,huhn,chicken,,Das Huhn gackert.,The chicken clucks.
+575,ente,duck,,Die Ente schnattert.,The duck quacks.
+576,frosch,frog,,Der Frosch quakt.,The frog croaks.
+577,spinne,spider,,Große Spinne.,Big spider.
+578,biene,bee,,Die Biene summt.,The bee buzzes.
+579,schmetterling,butterfly,,Schöner Schmetterling.,Beautiful butterfly.
+580,rose,rose,,Rote Rose.,Red rose.
+581,baum,tree,,Hoher Baum.,Tall tree.
+582,apfel,apple,,Roter Apfel.,Red apple.
+583,banane,banana,,Reife Banane.,Ripe banana.
+584,orange,orange,,Süße Orange.,Sweet orange.
+585,zitrone,lemon,,Saure Zitrone.,Sour lemon.
+586,wein,grape/wine,,Trauben ernten.,Harvest grapes.
+587,brot,bread,,Frisches Brot.,Fresh bread.
+588,milch,milk,,Frische Milch.,Fresh milk.
+589,käse,cheese,,Alter Käse.,Aged cheese.
+590,ei,egg,,Frisches Ei.,Fresh egg.
+591,fleisch,meat,,Rohes Fleisch.,Raw meat.
+592,fisch,fish,,Gegrillter Fisch.,Grilled fish.
+593,gemüse,vegetables,,Frisches Gemüse.,Fresh vegetables.
+594,kartoffel,potato,,Gebratene Kartoffeln.,Fried potatoes.
+595,tomate,tomato,,Reife Tomate.,Ripe tomato.
+596,salat,salad/lettuce,,Frischer Salat.,Fresh salad.
+597,zucker,sugar,,Weißer Zucker.,White sugar.
+598,salz,salt,,Wenig Salz.,Little salt.
+599,pfeffer,pepper,,Schwarzer Pfeffer.,Black pepper.
+600,öl,oil,,Olivenöl.,Olive oil.
+601,wasser,water,,Kaltes Wasser.,Cold water.
+602,wein,wine,,Roter Wein.,Red wine.
+603,bier,beer,,Kaltes Bier.,Cold beer.
+604,kaffee,coffee,,Starker Kaffee.,Strong coffee.
+605,tee,tea,,Grüner Tee.,Green tea.
+606,saft,juice,,Orangensaft.,Orange juice.
+607,limonade,lemonade,,Kalte Limonade.,Cold lemonade.
+608,haus,house,,Großes Haus.,Big house.
+609,tür,door,,Die Tür ist offen.,The door is open.
+610,fenster,window,,Offenes Fenster.,Open window.
+611,wand,wall,,Weiße Wand.,White wall.
+612,boden,floor,,Sauberer Boden.,Clean floor.
+613,decke,ceiling,,Hohe Decke.,High ceiling.
+614,treppe,stairs,,Die Treppe hoch.,Up the stairs.
+615,zimmer,room,,Mein Zimmer.,My room.
+616,küche,kitchen,,In der Küche.,In the kitchen.
+617,bad,bathroom,,Ins Bad.,To the bathroom.
+618,schlafzimmer,bedroom,,Im Schlafzimmer.,In the bedroom.
+619,wohnzimmer,living room,,Im Wohnzimmer.,In the living room.
+620,garten,garden,,Schöner Garten.,Beautiful garden.
+621,tisch,table,,Am Tisch.,At the table.
+622,stuhl,chair,,Bequemer Stuhl.,Comfortable chair.
+623,bett,bed,,Weiches Bett.,Soft bed.
+624,schrank,wardrobe,,Großer Schrank.,Big wardrobe.
+625,lampe,lamp,,Helle Lampe.,Bright lamp.
+626,bild,picture,,Schönes Bild.,Beautiful picture.
+627,uhr,clock,,Die Uhr tickt.,The clock ticks.
+628,telefon,telephone,,Am Telefon.,On the phone.
+629,computer,computer,,Neuer Computer.,New computer.
+630,fernseher,TV,,Großer Fernseher.,Big TV.
+631,radio,radio,,Lautes Radio.,Loud radio.
+632,buch,book,,Gutes Buch.,Good book.
+633,heft,notebook,,Neues Heft.,New notebook.
+634,stift,pen,,Blauer Stift.,Blue pen.
+635,bleistift,pencil,,Spitzer Bleistift.,Sharp pencil.
+636,papier,paper,,Weißes Papier.,White paper.
+637,tasche,bag,,Meine Tasche.,My bag.
+638,schuh,shoe,,Neue Schuhe.,New shoes.
+639,hose,trousers,,Lange Hose.,Long trousers.
+640,hemd,shirt,,Weißes Hemd.,White shirt.
+641,jacke,jacket,,Warme Jacke.,Warm jacket.
+642,mantel,coat,,Langer Mantel.,Long coat.
+643,kleid,dress,,Schönes Kleid.,Beautiful dress.
+644,rock,skirt,,Kurzer Rock.,Short skirt.
+645,pullover,sweater,,Warmer Pullover.,Warm sweater.
+646,socken,socks,,Warme Socken.,Warm socks.
+647,unterhose,underpants,,Saubere Unterhose.,Clean underpants.
+648,brille,glasses,,Meine Brille.,My glasses.
+649,uhr,watch,,Armbanduhr.,Wristwatch.
+650,ring,ring,,Goldener Ring.,Golden ring.
+651,kette,necklace,,Silberne Kette.,Silver necklace.
+652,stadt,city,,Große Stadt.,Big city.
+653,straße,street,,Breite Straße.,Wide street.
+654,platz,square,,Zentraler Platz.,Central square.
+655,park,park,,Schöner Park.,Beautiful park.
+656,bahnhof,train station,,Am Bahnhof.,At the train station.
+657,flughafen,airport,,Großer Flughafen.,Big airport.
+658,bushaltestelle,bus stop,,Nächste Haltestelle.,Next stop.
+659,auto,car,,Rotes Auto.,Red car.
+660,zug,train,,Schneller Zug.,Fast train.
+661,bus,bus,,Der Bus kommt.,The bus is coming.
+662,fahrrad,bicycle,,Mein Fahrrad.,My bicycle.
+663,flugzeug,plane,,Großes Flugzeug.,Big plane.
+664,schiff,ship,,Großes Schiff.,Big ship.
+665,straße,road,,Lange Straße.,Long road.
+666,weg,path,,Der richtige Weg.,The right path.
+667,brücke,bridge,,Hohe Brücke.,High bridge.
+668,tunnel,tunnel,,Langer Tunnel.,Long tunnel.
+669,ampel,traffic light,,Rote Ampel.,Red light.
+670,schild,sign,,Verbotsschild.,No-entry sign.
+671,polizist,police officer,,Der Polizist.,The police officer.
+672,arzt,doctor,,Zum Arzt gehen.,Go to the doctor.
+673,krankenschwester,nurse,,Die Krankenschwester.,The nurse.
+674,lehrer,teacher,,Guter Lehrer.,Good teacher.
+675,schüler,student,,Fleißiger Schüler.,Hardworking student.
+676,chef,boss,,Der Chef.,The boss.
+677,kollege,colleague,,Lieber Kollege.,Dear colleague.
+678,freund,friend,,Bester Freund.,Best friend.
+679,nachbar,neighbor,,Netter Nachbar.,Nice neighbor.
+680,familie,family,,Große Familie.,Big family.
+681,mutter,mother,,Meine Mutter.,My mother.
+682,vater,father,,Mein Vater.,My father.
+683,sohn,son,,Unser Sohn.,Our son.
+684,tochter,daughter,,Unsere Tochter.,Our daughter.
+685,bruder,brother,,Mein Bruder.,My brother.
+686,schwester,sister,,Meine Schwester.,My sister.
+687,oma,grandma,,Liebe Oma.,Dear grandma.
+688,opa,grandpa,,Lieber Opa.,Dear grandpa.
+689,kind,child,,Kleines Kind.,Small child.
+690,baby,baby,,Süßes Baby.,Cute baby.
+691,mann,man/husband,,Mein Mann.,My husband.
+692,frau,wife/woman,,Meine Frau.,My wife.
+693,name,name,,Vorname und Nachname.,First and last name.
+694,alter,age,,Wie alt bist du?,How old are you?
+695,adresse,address,,Neue Adresse.,New address.
+696,telefonnummer,phone number,,Handynummer.,Mobile number.
+697,geburtstag,birthday,,Alles Gute zum Geburtstag!,Happy birthday!
+698,hochzeit,wedding,,Zur Hochzeit.,To the wedding.
+699,ferien,vacation,,In den Ferien.,On vacation.
+700,urlaub,holiday,,Im Urlaub.,On holiday.
+701,reise,trip,,Gute Reise!,Have a good trip!
+702,hotel,hotel,,Gutes Hotel.,Good hotel.
+703,restaurant,restaurant,,Italienisches Restaurant.,Italian restaurant.
+704,café,café,,Ins Café gehen.,Go to the café.
+705,kino,cinema,,Ins Kino gehen.,Go to the cinema.
+706,theater,theater,,Ins Theater.,To the theater.
+707,museum,museum,,Interessantes Museum.,Interesting museum.
+708,schule,school,,In der Schule.,At school.
+709,universität,university,,An der Uni.,At the uni.
+710,bibliothek,library,,In der Bibliothek.,In the library.
+711,geschäft,shop,,Kleiner Laden.,Small shop.
+712,supermarkt,supermarket,,Großer Supermarkt.,Big supermarket.
+713,bäckerei,bakery,,Zur Bäckerei.,To the bakery.
+714,apotheke,pharmacy,,In der Apotheke.,In the pharmacy.
+715,bank,bank,,Zur Bank.,To the bank.
+716,post,post office,,Zur Post.,To the post office.
+717,montag,Monday,,Am Montag.,On Monday.
+718,dienstag,Tuesday,,Am Dienstag.,On Tuesday.
+719,mittwoch,Wednesday,,Am Mittwoch.,On Wednesday.
+720,donnerstag,Thursday,,Am Donnerstag.,On Thursday.
+721,freitag,Friday,,Am Freitag.,On Friday.
+722,samstag,Saturday,,Am Samstag.,On Saturday.
+723,sonntag,Sunday,,Am Sonntag.,On Sunday.
+724,januar,January,,Im Januar.,In January.
+725,februar,February,,Im Februar.,In February.
+726,märz,March,,Im März.,In March.
+727,april,April,,Im April.,In April.
+728,mai,May,,Im Mai.,In May.
+729,juni,June,,Im Juni.,In June.
+730,juli,July,,Im Juli.,In July.
+731,august,August,,Im August.,In August.
+732,september,September,,Im September.,In September.
+733,oktober,October,,Im Oktober.,In October.
+734,november,November,,Im November.,In November.
+735,dezember,December,,Im Dezember.,In December.
+736,frühling,spring,,Im Frühling.,In spring.
+737,sommer,summer,,Im Sommer.,In summer.
+738,herbst,autumn,,Im Herbst.,In autumn.
+739,winter,winter,,Im Winter.,In winter.
+740,morgen,morning,,Guten Morgen!,Good morning!
+741,mittag,noon,,Guten Tag!,Good day!
+742,abend,evening,,Guten Abend!,Good evening!
+743,nacht,night,,Gute Nacht!,Good night!
+744,stunde,hour,,Eine Stunde.,One hour.
+745,minute,minute,,Zehn Minuten.,Ten minutes.
+746,sekunde,second,,Eine Sekunde.,One second.
+747,woche,week,,Nächste Woche.,Next week.
+748,monat,month,,Nächster Monat.,Next month.
+749,jahr,year,,Nächstes Jahr.,Next year.
+750,heute,today,,Heute ist Freitag.,Today is Friday.
+751,morgen,tomorrow,,Morgen früh.,Tomorrow morning.
+752,übermorgen,day after tomorrow,,Übermorgen komme ich.,Day after tomorrow I'll come.
+753,gestern,yesterday,,Gestern war Sonntag.,Yesterday was Sunday.
+754,vorgestern,day before yesterday,,Vorgestern war kalt.,Day before yesterday was cold.
+755,jetzt,now,,Jetzt sofort!,Now immediately!
+756,später,later,,Später vielleicht.,Later maybe.
+757,bald,soon,,Bald fertig.,Soon done.
+758,schon,already,,Schon da?,Already there?
+759,noch,still,,Noch nicht.,Not yet.
+760,nie,never,,Nie wieder!,Never again!
+761,immer,always,,Immer so.,Always like that.
+762,oft,often,,Oft kommen.,Come often.
+763,selten,rarely,,Selten gesehen.,Rarely seen.
+764,manchmal,sometimes,,Manchmal ja.,Sometimes yes.
+765,gewöhnlich,usually,,Gewöhnlich ja.,Usually yes.
+766,normalerweise,normally,,Normalerweise nicht.,Normally not.
+767,fast,almost,,Fast immer.,Almost always.
+768,beinahe,nearly,,Beinahe vergessen.,Nearly forgotten.
+769,etwa,about/approximately,,Etwa zehn.,About ten.
+770,ungefähr,approximately,,Ungefähr richtig.,Approximately right.
+771,genau,exactly,,Genau um 8.,Exactly at 8.
+772,ungefähr,about,,Ungefähr 100.,About 100.
+773,circa,about,,Circa 50 Euro.,About 50 euros.
+774,plus,plus,,Zwei plus zwei.,Two plus two.
+775,minus,minus,,Fünf minus drei.,Five minus three.
+776,mal,times,,Drei mal vier.,Three times four.
+777,durch,divided by,,Zehn durch zwei.,Ten divided by two.
+778,gleich,equals,,Zwei plus zwei gleich vier.,Two plus two equals four.
+779,mehr,more,,Noch mehr?,Even more?
+780,weniger,less,,Weniger Zucker.,Less sugar.
+781,zu,to,,Zu viel!,Too much!
+782,sehr,very,,Sehr gut!,Very good!
+783,wirklich,really,,Wirklich wahr?,Really true?
+784,total,totally,,Total verrückt!,Totally crazy!
+785,vollkommen,completely,,Vollkommen richtig.,Completely right.
+786,absolut,absolutely,,Absolut sicher.,Absolutely sure.
+787,ziemlich,quite,,Ziemlich gut.,Quite good.
+788,eher,rather,,Eher nein.,Rather no.
+789,kaum,hardly,,Kaum zu glauben.,Hardly believable.
+790,fast,almost,,Fast fertig.,Almost done.
+791,gerade,just/right now,,Gerade angekommen.,Just arrived.
+792,sofort,immediately,,Sofort kommen!,Come immediately!
+793,gleich,right away,,Ich komme gleich!,I'm coming right away!
+794,plötzlich,suddenly,,Plötzlich war er da.,Suddenly he was there.
+795,langsam,slowly,,Langsam essen.,Eat slowly.
+796,schnell,quickly,,Schnell laufen.,Run quickly.
+797,leise,quietly,,Leise sprechen.,Speak quietly.
+798,laut,loudly,,Laut singen.,Sing loudly.
+799,vorsichtig,carefully,,Vorsichtig sein!,Be careful!
+800,ruhig,calmly,,Ruhig bleiben!,Stay calm!
+801,heftig,violently,,Heftig regnen.,Rain heavily.
+802,sanft,gently,,Sanft streicheln.,Stroke gently.
+803,fest,hard/tightly,,Fest halten!,Hold tight!
+804,locker,loosely,,Locker sitzen.,Sit loosely.
+805,direkt,directly,,Direkt daneben.,Directly next to.
+806,indirekt,indirectly,,Indirekt sagen.,Say indirectly.
+807,vorne,in front,,Vorne sitzen.,Sit in front.
+808,hinten,at the back,,Hinten stehen.,Stand at the back.
+809,oben,upstairs,,Oben wohnen.,Live upstairs.
+810,unten,downstairs,,Unten parken.,Park downstairs.
+811,links,left,,Links abbiegen.,Turn left.
+812,rechts,right,,Rechts halten.,Keep right.
+813,geradeaus,straight ahead,,Geradeaus gehen.,Go straight.
+814,zurück,back,,Zurückkommen.,Come back.
+815,vorwärts,forward,,Vorwärts marsch!,Forward march!
+816,rückwärts,backwards,,Rückwärts gehen.,Go backwards.
+817,hoch,up,,Hoch springen.,Jump up.
+818,runter,down,,Runterkommen.,Come down.
+819,rein,in,,Reinkommen!,Come in!
+820,raus,out,,Rausgehen.,Go out.
+821,her,here (direction),,Her damit!,Give it here!
+822,hin,there (direction),,Dorthin gehen.,Go there.
+823,herauf,up here,,Heraufkommen.,Come up here.
+824,herunter,down here,,Herunterkommen.,Come down here.
+825,hinein,into,,Hineingehen.,Go in.
+826,hinaus,out,,Hinausgehen.,Go out.
+827,herüber,over here,,Herüberkommen.,Come over here.
+828,hinüber,over there,,Hinübergehen.,Go over there.
+829,zusammen,together,,Zusammen essen.,Eat together.
+830,allein,alone,,Allein sein.,Be alone.
+831,gemeinsam,together,,Gemeinsam arbeiten.,Work together.
+832,getrennt,separately,,Getrennt zahlen.,Pay separately.
+833,nebenbei,by the way,,Nebenbei bemerkt...,By the way...
+834,übrigens,by the way,,Übrigens,weißt du...?
+835,allerdings,however,,Allerdings teuer.,However expensive.
+836,trotzdem,nevertheless,,Trotzdem komme ich.,Nevertheless I'll come.
+837,sonst,otherwise,,Sonst nichts.,Otherwise nothing.
+838,außerdem,besides,,Außerdem kalt.,Besides cold.
+839,darüber hinaus,furthermore,,Darüber hinaus...,Furthermore...
+840,zwar...aber,although...but,,Zwar schön,aber teuer.
+841,entweder...oder,either...or,,Entweder jetzt oder nie.,Either now or never.
+842,weder...noch,neither...nor,,Weder Fisch noch Fleisch.,Neither fish nor flesh.
+843,sowohl...als auch,both...and,,Sowohl als auch.,Both and.
+844,nicht nur...sondern auch,not only...but also,,Nicht nur gut,sondern super.
+845,je...desto,the...the,,Je früher,desto besser.
+846,obwohl,although,,Obwohl müde.,Although tired.
+847,trotzdem,despite that,,Trotzdem gegangen.,Gone despite that.
+848,damit,so that,,Damit es klappt.,So that it works.
+849,weil,because,,Weil es regnet.,Because it's raining.
+850,da,because,,Da ich müde bin.,Because I am tired.
+851,falls,in case,,Falls es regnet.,In case it rains.
+852,sobald,as soon as,,Sobald möglich.,As soon as possible.
+853,bevor,before,,Bevor es zu spät ist.,Before it's too late.
+854,nachdem,after,,Nachdem wir gegessen haben.,After we ate.
+855,während,while,,Während des Films.,During the movie.
+856,seitdem,since then,,Seitdem nicht mehr.,Not anymore since then.
+857,bis,until,,Bis bald!,Until soon!
+858,solange,as long as,,Solange ich lebe.,As long as I live.
+859,je,ever,,Hast du je...?,Have you ever...?
+860,jemals,ever,,Nie jemals.,Never ever.
+861,schon,already,,Schon gesehen?,Already seen?
+862,noch,still,,Noch da?,Still there?
+863,mehr,no more,,Nicht mehr.,No more.
+864,länger,no longer,,Nicht länger warten.,No longer wait.
+865,bald,soon,,Bald da.,Soon there.
+866,später,later,,Später dann.,Later then.
+867,früher,earlier,,Früher war besser.,Earlier was better.
+868,jetzt,now,,Jetzt aber!,Now though!
+869,gleich,soon/right away,,Gleich da!,Be there soon!
+870,sofort,immediately,,Sofort!,Immediate!
+871,dann,then,,Dann los!,Then go!
+872,danach,afterwards,,Danach essen.,Eat afterwards.
+873,zuerst,first,,Zuerst trinken.,Drink first.
+874,zuerst,first of all,,Zuerst einmal...,First of all...
+875,zuletzt,lastly,,Zuletzt kommt...,Lastly comes...
+876,endlich,finally,,Endlich da!,Finally here!
+877,plötzlich,suddenly,,Plötzlich weg.,Suddenly gone.
+878,langsam,gradually,,Langsam besser.,Gradually better.
+879,schnell,quickly,,Schnell fertig.,Quickly done.
+880,immer,always,,Immer wieder.,Again and again.
+881,oft,often,,Oft hier.,Often here.
+882,selten,rarely,,Selten gesehen.,Rarely seen.
+883,nie,never,,Nie wieder!,Never again!
+884,manchmal,sometimes,,Manchmal ja.,Sometimes yes.
+885,häufig,frequently,,Häufig kommen.,Come frequently.
+886,gelegentlich,occasionally,,Gelegentlich mal.,Occasionally.
+887,regelmäßig,regularly,,Regelmäßig trainieren.,Train regularly.
+888,ständig,constantly,,Ständig läuten.,Constantly ringing.
+889,meistens,mostly,,Meistens ja.,Mostly yes.
+890,gewöhnlich,usually,,Gewöhnlich so.,Usually like that.
+891,normalerweise,normally,,Normalerweise nicht.,Normally not.
+892,typischerweise,typically,,Typischerweise teuer.,Typically expensive.
+893,üblicherweise,usually,,Üblicherweise ja.,Usually yes.
+894,ausnahmsweise,exceptionally,,Ausnahmsweise mal.,Exceptionally once.
+895,zufällig,by chance,,Zufällig hier?,By chance here?
+896,absichtlich,intentionally,,Absichtlich gemacht.,Done intentionally.
+897,unabsichtlich,unintentionally,,Unabsichtlich fallen lassen.,Dropped unintentionally.
+898,freiwillig,voluntarily,,Freiwillig helfen.,Help voluntarily.
+899,zwangsweise,compulsorily,,Zwangsweise mitkommen.,Have to come along.
+900,gerne,gladly,,Sehr gerne!,Very gladly!
+901,ungern,reluctantly,,Ungern zugeben.,Reluctantly admit.
+902,lieber,rather,,Lieber nicht.,Rather not.
+903,am liebsten,preferably,,Am liebsten zu Hause.,Preferably at home.
+904,höchstens,at most,,Höchstens zehn.,At most ten.
+905,mindestens,at least,,Mindestens zwanzig.,At least twenty.
+906,etwa,about,,Etwa so groß.,About that big.
+907,ungefähr,approximately,,Ungefähr richtig.,Approximately right.
+908,circa,circa,,Circa 100 Leute.,Circa 100 people.
+909,plus,plus,,Fünf plus fünf.,Five plus five.
+910,minus,minus,,Zehn minus zwei.,Ten minus two.
+911,mal,times,,Vier mal fünf.,Four times five.
+912,geteilt durch,divided by,,Zwanzig geteilt durch vier.,Twenty divided by four.
+913,gleich,equals,,Zehn plus zehn gleich zwanzig.,Ten plus ten equals twenty.
+914,prozent,percent,,Zehn Prozent.,Ten percent.
+915,halb,half,,Halb zwölf.,Half past eleven.
+916,viertel,quarter,,Viertel nach drei.,Quarter past three.
+917,drittel,third,,Ein Drittel.,One third.
+918,ganz,whole,,Ganz Deutschland.,All of Germany.
+919,halb,half,,Halb voll.,Half full.
+920,voll,full,,Voll besetzt.,Fully occupied.
+921,leer,empty,,Leer stehen.,Stand empty.
+922,teilweise,partly,,Teilweise bewölkt.,Partly cloudy.
+923,vollständig,completely,,Vollständig fertig.,Completely done.
+924,ganz,quite,,Ganz okay.,Quite okay.
+925,total,totally,,Total verrückt.,Totally crazy.
+926,absolut,absolutely,,Absolut richtig.,Absolutely right.
+927,völlig,completely,,Völlig egal.,Completely indifferent.
+928,sehr,very,,Sehr wichtig.,Very important.
+929,äußerst,extremely,,Äußerst selten.,Extremely rare.
+930,besonders,particularly,,Besonders schön.,Particularly beautiful.
+931,außerordentlich,extraordinarily,,Außerordentlich gut.,Extraordinarily good.
+932,ungeheuer,immensely,,Ungeheuer laut.,Immensely loud.
+933,enorm,enormously,,Enorm teuer.,Enormously expensive.
+934,riesig,huge,,Riesig groß.,Huge.
+935,winzig,tiny,,Winzig klein.,Tiny.
+936,gigantisch,gigantic,,Gigantisch groß.,Gigantic.
+937,minimal,minimal,,Minimaler Aufwand.,Minimal effort.
+938,maximal,maximum,,Maximal schnell.,Maximum speed.
+939,optimal,optimal,,Optimal gelöst.,Optimally solved.
+940,perfekt,perfect,,Perfekt!,Perfect!
+941,ideal,ideal,,Ideale Lösung.,Ideal solution.
+942,exzellent,excellent,,Exzellent!,Excellent!
+943,fantastisch,fantastic,,Fantastisch!,Fantastic!
+944,wunderbar,wonderful,,Wunderbar!,Wonderful!
+945,herrlich,gorgeous,,Herrlich!,Gorgeous!
+946,traumhaft,dreamlike,,Traumhaft schön.,Dreamlike beautiful!
+947,zauberhaft,enchanting,,Zauberhaft.,Enchanting!
+948,hinreißend,charming,,Hinreißend!,Charming!
+949,bezaubernd,charming,,Bezaubernd!,Charming!
+950,liebenswert,lovable,,Liebenswert.,Lovable!
+951,nett,nice,,Sehr nett.,Very nice!
+952,freundlich,friendly,,Sehr freundlich.,Very friendly!
+953,höflich,polite,,Sehr höflich.,Very polite!
+954,hilfsbereit,helpful,,Sehr hilfsbereit.,Very helpful!
+955,geduldig,patient,,Bleib geduldig!,Stay patient!
+956,tolerant,tolerant,,Sehr tolerant.,Very tolerant!
+957,offen,open,,Sehr offen.,Very open!
+958,ehrlich,honest,,Ehrlich gesagt...,Honestly speaking...
+959,aufrichtig,sincere,,Aufrichtig gemeint.,Sincerely meant.
+960,fair,fair,,Fair spielen.,Play fair.
+961,gerecht,just,,Gerecht sein.,Be just.
+962,treu,loyal,,Treuer Freund.,Loyal friend.
+963,zuverlässig,reliable,,Sehr zuverlässig.,Very reliable.
+964,pünktlich,punctual,,Immer pünktlich.,Always punctual.
+965,fleißig,hardworking,,Sehr fleißig.,Very hardworking.
+966,intelligent,intelligent,,Sehr intelligent.,Very intelligent.
+967,klug,clever,,Sehr klug.,Very clever!
+968,weise,wise,,Weise Entscheidung.,Wise decision.
+969,kreativ,creative,,Sehr kreativ.,Very creative!
+970,originell,original,,Originelle Idee.,Original idea.
+971,witzig,funny,,Sehr witzig!,Very funny!
+972,humorvoll,humorous,,Humorvoller Mensch.,Humorous person.
+973,lustig,funny,,Lustiger Witz.,Funny joke.
+974,fröhlich,cheerful,,Fröhliche Leute.,Cheerful people.
+975,heiter,cheerful,,Heiteres Gemüt.,Cheerful mood.
+976,glücklich,happy,,Glücklich sein.,Be happy.
+977,zufrieden,satisfied,,Zufrieden sein.,Be satisfied.
+978,stolz,proud,,Stolz auf dich!,Proud of you!
+979,dankbar,grateful,,Sehr dankbar.,Very grateful.
+980,froh,glad,,Froh sein.,Be glad.
+981,begeistert,enthusiastic,,Total begeistert!,Totally enthusiastic!
+982,fasziniert,fascinated,,Fasziniert sein.,Be fascinated.
+983,interessiert,interested,,Sehr interessiert.,Very interested!
+984,neugierig,curious,,Neugierig sein.,Be curious.
+985,mutig,brave,,Sehr mutig.,Very brave!
+986,tapfer,courageous,,Tapfer kämpfen.,Fight courageously.
+987,stark,strong,,Stark bleiben!,Stay strong!
+988,kraftvoll,powerful,,Kraftvolle Stimme.,Powerful voice.
+989,energisch,energetic,,Energisch handeln.,Act energetically.
+990,lebhaft,lively,,Lebhaftes Kind.,Lively child.
+991,aktiv,active,,Aktiv mitmachen.,Join in actively.
+992,dynamisch,dynamic,,Dynamische Person.,Dynamic person.
+993,ruhig,calm,,Ruhig bleiben!,Stay calm!
+994,gelassen,relaxed,,Gelassen bleiben.,Stay relaxed.
+995,entspannt,relaxed,,Entspannt sein.,Be relaxed.
+996,friedlich,peaceful,,Friedliche Lösung.,Peaceful solution.
+997,sanft,gentle,,Sanfte Berührung.,Gentle touch.
+998,zart,tender,,Zarte Haut.,Tender skin.
+999,weich,soft,,Weiches Kissen.,Soft pillow.
+1000,hart,hard,,Harte Arbeit.,Hard work.
+1001,streng,strict,,Strenge Regeln.,Strict rules.
+1002,diszipliniert,disciplined,,Diszipliniert sein.,Be disciplined.
+1003,ordentlich,neat,,Ordentlich sein.,Be neat.
+1004,sauber,clean,,Sauber machen.,Clean up.
+1005,schlampig,sloppy,,Schlampig arbeiten.,Work sloppily.
+1006,faul,lazy,,Faul sein.,Be lazy.
+1007,träge,sluggish,,Träge werden.,Become sluggish.
+1008,langweilig,boring,,Langweilig sein.,Be boring.
+1009,spannend,exciting,,Sehr spannend!,Very exciting!
+1010,interessant,interesting,,Sehr interessant!,Very interesting!
+1011,faszinierend,fascinating,,Faszinierend!,Fascinating!
+1012,beeindruckend,impressive,,Beeindruckend!,Impressive!
+1013,erstaunlich,amazing,,Erstaunlich!,Amazing!
+1014,unglaublich,incredible,,Unglaublich!,Incredible!
+1015,wunderbar,wonderful,,Wunderbar!,Wonderful!
+1016,schrecklich,terrible,,Schrecklich!,Terrible!
+1017,furchtbar,awful,,Furchtbar kalt.,Awfully cold.
+1018,grauenhaft,horrible,,Grauenhaft!,Horrible!
+1019,entsetzlich,dreadful,,Entsetzlich laut.,Dreadfully loud.
+1020,fürchterlich,dreadful,,Fürchterlich!,Dreadful!
+1021,ekelhaft,disgusting,,Ekelhaft!,Disgusting!
+1022,widerlich,repulsive,,Widerlich!,Repulsive!
+1023,hässlich,ugly,,Hässlich sein.,Be ugly.
+1024,scheußlich,hideous,,Scheußlich!,Hideous!
+1025,traurig,sad,,Traurig sein.,Be sad.
+1026,deprimiert,depressed,,Depressiv sein.,Be depressed.
+1027,unglücklich,unhappy,,Unglücklich sein.,Be unhappy.
+1028,verzweifelt,desperate,,Verzweifelt suchen.,Search desperately.
+1029,verärgert,annoyed,,Verärgert sein.,Be annoyed.
+1030,wütend,angry,,Wütend werden.,Get angry.
+1031,böse,angry,,Böse sein.,Be angry.
+1032,sauer,angry,,Sauer sein.,Be angry.
+1033,genervt,annoyed,,Genervt sein.,Be annoyed.
+1034,gestresst,stressed,,Gestresst sein.,Be stressed.
+1035,nervös,nervous,,Nervös sein.,Be nervous.
+1036,ängstlich,anxious,,Ängstlich sein.,Be anxious.
+1037,furchtlos,fearless,,Furchtlos sein.,Be fearless.
+1038,schüchtern,shy,,Schüchtern sein.,Be shy.
+1039,schamlos,shameless,,Schamlos lügen.,Lie shamelessly.
+1040,stolz,proud,,Stolz sein.,Be proud.
+1041,arrogant,arrogant,,Arrogant sein.,Be arrogant.
+1042,eingebildet,conceited,,Eingebildet sein.,Be conceited.
+1043,bescheiden,modest,,Bescheiden sein.,Be modest.
+1044,demütig,humble,,Demütig sein.,Be humble.
+1045,selbstbewusst,self-confident,,Selbstbewusst auftreten.,Appear self-confident.
+1046,unsicher,insecure,,Unsicher sein.,Be insecure.
+1047,verlegen,embarrassed,,Verlegen sein.,Be embarrassed.
+1048,peinlich,embarrassing,,Peinlich sein.,Be embarrassing.
+1049,komisch,funny/strange,,Komisch aussehen.,Look funny.
+1050,lächerlich,ridiculous,,Lächerlich!,Ridiculous!
+1051,albern,silly,,Albern sein.,Be silly.
+1052,ernst,serious,,Ernst sein.,Be serious.
+1053,streng,strict,,Streng sein.,Be strict.
+1054,locker,casual,,Locker bleiben.,Stay casual.
+1055,cool,cool,,Total cool!,Totally cool!
+1056,hip,cool,,Hip sein.,Be hip.
+1057,modern,modern,,Modern eingerichtet.,Furnished modern.
+1058,altmodisch,old-fashioned,,Altmodisch gekleidet.,Dressed old-fashioned.
+1059,traditionell,traditional,,Traditionelle Küche.,Traditional cuisine.
+1060,international,international,,International bekannt.,Internationally known.
+1061,lokal,local,,Lokales Bier.,Local beer.
+1062,regional,regional,,Regionale Produkte.,Regional products.
+1063,national,national,,Nationalfeiertag.,National holiday.
+1064,global,global,,Global denken.,Think global.
+1065,weltweit,worldwide,,Weltweit bekannt.,Worldwide known.
+1066,europa,Europe,,In Europa.,In Europe.
+1067,deutschland,Germany,,In Deutschland leben.,Live in Germany.
+1068,berlin,Berlin,,In Berlin.,In Berlin.
+1069,münchen,Munich,,In München.,In Munich.
+1070,hamburg,Hamburg,,In Hamburg.,In Hamburg.
+1071,köln,Cologne,,In Köln.,In Cologne.
+1072,frankfurt,Frankfurt,,In Frankfurt.,In Frankfurt.
+1073,stuttgart,Stuttgart,,In Stuttgart.,In Stuttgart.
+1074,düsseldorf,Düsseldorf,,In Düsseldorf.,In Düsseldorf.
+1075,dortmund,Dortmund,,In Dortmund.,In Dortmund.
+1076,essen,Essen,,In Essen.,In Essen.
+1077,leipzig,Leipzig,,In Leipzig.,In Leipzig.
+1078,dresden,Dresden,,In Dresden.,In Dresden.
+1079,hannover,Hanover,,In Hannover.,In Hanover.
+1080,nürnberg,Nuremberg,,In Nürnberg.,In Nuremberg.
+1081,österreich,Austria,,In Österreich.,In Austria.
+1082,wien,Vienna,,In Wien.,In Vienna.
+1083,schweiz,Switzerland,,In der Schweiz.,In Switzerland.
+1084,zürich,Zurich,,In Zürich.,In Zurich.
+1085,frankreich,France,,In Frankreich.,In France.
+1086,paris,Paris,,In Paris.,In Paris.
+1087,spanien,Spain,,In Spanien.,In Spain.
+1088,madrid,Madrid,,In Madrid.,In Madrid.
+1089,italien,Italy,,In Italien.,In Italy.
+1090,rom,Rome,,In Rom.,In Rome.
+1091,england,England,,In England.,In England.
+1092,london,London,,In London.,In London.
+1093,usa,USA,,In den USA.,In the USA.
+1094,new york,New York,,In New York.,In New York.
+1095,los angeles,Los Angeles,,In Los Angeles.,In Los Angeles.
+1096,china,China,,In China.,In China.
+1097,peking,Beijing,,In Peking.,In Beijing.
+1098,japan,Japan,,In Japan.,In Japan.
+1099,tokyo,Tokyo,,In Tokyo.,In Tokyo.
+1100,russland,Russia,,In Russland.,In Russia.
+1101,moskau,Moscow,,In Moskau.,In Moscow.
+1102,ägypten,Egypt,,In Ägypten.,In Egypt.
+1103,kairo,Cairo,,In Kairo.,In Cairo.
+1104,brasilien,Brazil,,In Brasilien.,In Brazil.
+1105,rio de janeiro,Rio de Janeiro,,In Rio.,In Rio.
+1106,australien,Australia,,In Australien.,In Australia.
+1107,sydney,Sydney,,In Sydney.,In Sydney.
+1108,deutsch,German,,Deutsch sprechen.,Speak German.
+1109,englisch,English,,Englisch lernen.,Learn English.
+1110,französisch,French,,Französisch können.,Know French.
+1111,spanisch,Spanish,,Spanisch verstehen.,Understand Spanish.
+1112,italienisch,Italian,,Italienisch essen.,Eat Italian.
+1113,chinesisch,Chinese,,Chinesisch kochen.,Cook Chinese.
+1114,japanisch,Japanese,,Japanisch lernen.,Learn Japanese.
+1115,russisch,Russian,,Russisch sprechen.,Speak Russian.
+1116,arabisch,Arabic,,Arabisch verstehen.,Understand Arabic.
+1117,portugiesisch,Portuguese,,Portugiesisch können.,Know Portuguese.
+1118,sprache,language,,Fremdsprache lernen.,Learn foreign language.
+1119,wort,word,,Neues Wort.,New word.
+1120,satz,sentence,,Langer Satz.,Long sentence.
+1121,grammatik,grammar,,Deutsche Grammatik.,German grammar.
+1122,aussprache,pronunciation,,Gute Aussprache.,Good pronunciation.
+1123,akzent,accent,,Starker Akzent.,Strong accent.
+1124,übersetzen,to translate,,Ins Deutsche übersetzen.,Translate into German.
+1125,verstehen,to understand,,Gut verstehen.,Understand well.
+1126,sprechen,to speak,,Laut sprechen.,Speak loudly.
+1127,hören,to listen,,Gut zuhören.,Listen well.
+1128,lesen,to read,,Viel lesen.,Read a lot.
+1129,schreiben,to write,,Schön schreiben.,Write nicely.
+1130,lernen,to learn,,Schnell lernen.,Learn quickly.
+1131,lehren,to teach,,Deutsch lehren.,Teach German.
+1132,fragen,to ask,,Fragen stellen.,Ask questions.
+1133,antworten,to answer,,Richtig antworten.,Answer correctly.
+1134,erklären,to explain,,Gut erklären.,Explain well.
+1135,wiederholen,to repeat,,Nochmal wiederholen.,Repeat again.
+1136,aussprechen,to pronounce,,Richtig aussprechen.,Pronounce correctly.
+1137,fehler,mistake,,Grammatikfehler.,Grammar mistake.
+1138,korrigieren,to correct,,Fehler korrigieren.,Correct mistakes.
+1139,üben,to practice,,Viel üben.,Practice a lot.
+1140,anfangen,to begin,,Jetzt anfangen.,Begin now.
+1141,aufhören,to stop,,Nie aufhören.,Never stop.
+1142,fortsetzen,to continue,,Weiter fortsetzen.,Continue.
+1143,beenden,to finish,,Schnell beenden.,Finish quickly.
+1144,fertig,ready,,Fertig sein.,Be ready.
+1145,los,start,,Los geht's!,Let's go!
+1146,weiter,continue,,Weiter so!,Keep it up!
+1147,stopp,stop,,Stopp!,Stop!
+1148,halt,stop,,Halt machen.,Make a stop.
+1149,pause,break,,Pause machen.,Take a break.
+1150,ende,end,,Das Ende.,The end.
+1151,anfang,beginning,,Am Anfang.,At the beginning.
+1152,mitte,middle,,In der Mitte.,In the middle.
+1153,oben,top,,Oben drauf.,On top.
+1154,unten,bottom,,Unten drunter.,Underneath.
+1155,links,left,,Links davon.,To the left of it.
+1156,rechts,right,,Rechts daneben.,To the right of it.
+1157,vorne,front,,Vorne stehen.,Stand in front.
+1158,hinten,back,,Hinten sitzen.,Sit in back.
+1159,innen,inside,,Drinnen sein.,Be inside.
+1160,außen,outside,,Draußen warten.,Wait outside.
+1161,nahe,near,,Ganz nahe.,Very near.
+1162,fern,far,,Weit fern.,Far away.
+1163,direkt,direct,,Direkt daneben.,Directly next to.
+1164,neben,next to,,Neben mir.,Next to me.
+1165,gegenüber,opposite,,Gegenüber sitzen.,Sit opposite.
+1166,zwischen,between,,Zwischen uns.,Between us.
+1167,hinter,behind,,Hinter dem Haus.,Behind the house.
+1168,vor,in front of,,Vor der Tür.,In front of the door.
+1169,über,above,,Über den Wolken.,Above the clouds.
+1170,unter,below,,Unter dem Tisch.,Under the table.
+1171,neben,beside,,Neben dem Bett.,Beside the bed.
+1172,bei,at/near,,Bei mir.,Near me.
+1173,in,in,,In der Stadt.,In the city.
+1174,aus,from/out of,,Aus Berlin.,From Berlin.
+1175,zu,to,,Zu dir.,To you.
+1176,nach,to/after,,Nach Hause.,Home.
+1177,von,from,,Von dort.,From there.
+1178,mit,with,,Mit dem Auto.,With the car.
+1179,ohne,without,,Ohne Geld.,Without money.
+1180,für,for,,Für dich.,For you.
+1181,gegen,against,,Gegen den Wind.,Against the wind.
+1182,um,around,,Um die Welt.,Around the world.
+1183,durch,through,,Durch den Tunnel.,Through the tunnel.
+1184,während,during,,Während der Fahrt.,During the ride.
+1185,seit,since,,Seit Montag.,Since Monday.
+1186,bis,until,,Bis Freitag.,Until Friday.
+1187,innerhalb,within,,Innerhalb einer Stunde.,Within an hour.
+1188,außerhalb,outside,,Außerhalb der Stadt.,Outside the city.
+1189,trotz,despite,,Trotz Regen.,Despite rain.
+1190,wegen,because of,,Wegen dir.,Because of you.
+1191,laut,according to,,Laut Wetterbericht.,According to the weather report.
+1192,gemäß,according to,,Gemäß Plan.,According to plan.
+1193,anstatt,instead of,,Anstatt Kaffee Tee.,Tea instead of coffee.
+1194,statt,instead of,,Statt zu laufen fahren.,Drive instead of walk.
+1195,außer,except,,Außer dir.,Except you.
+1196,einschließlich,including,,Einschließlich MwSt.,Including VAT.
+1197,ausschließlich,excluding,,Ausschließlich Barzahlung.,Cash only.
+1198,ab,from,,Ab morgen.,From tomorrow.
+1199,bis,to/until,,Bis bald!,See you soon!
+1200,von...bis,from...to,,Von Montag bis Freitag.,From Monday to Friday.
+1201,seit,since,,Seit 2020.,Since 2020.
+1202,vor,before,,Vor zwei Stunden.,Two hours ago.
+1203,nach,after,,Nach dem Essen.,After eating.
+1204,heute,today,,Heute Abend.,Tonight.
+1205,morgen,tomorrow,,Morgen früh.,Tomorrow morning.
+1206,übermorgen,day after tomorrow,,Übermorgen vielleicht.,Day after tomorrow perhaps.
+1207,gestern,yesterday,,Gestern Nacht.,Last night.
+1208,vorgestern,day before yesterday,,Vorgestern war schön.,Day before yesterday was nice.
+1209,jetzt,now,,Jetzt gleich!,Right now!
+1210,sofort,immediately,,Sofort los!,Go immediately!
+1211,gleich,soon,,Gleich da!,Be there soon!
+1212,bald,soon,,Bald fertig.,Soon finished.
+1213,später,later,,Später mehr.,More later.
+1214,früher,earlier,,Früher aufstehen.,Get up earlier.
+1215,dann,then,,Dann sehen wir.,Then we'll see.
+1216,danach,after that,,Danach schlafen.,Sleep after that.
+1217,zuvor,before that,,Zuvor essen.,Eat before that.
+1218,zuerst,first,,Zuerst denken.,Think first.
+1219,zuerst,at first,,Zuerst langsam.,At first slowly.
+1220,zuletzt,last,,Zuletzt lachen.,Laugh last.
+1221,schließlich,finally,,Schließlich doch.,Finally after all.
+1222,endlich,finally,,Endlich Feierabend!,Finally off work!
+1223,plötzlich,suddenly,,Plötzlich dunkel.,Suddenly dark.
+1224,sofort,immediately,,Sofort reagieren.,React immediately.
+1225,gleichzeitig,simultaneously,,Gleichzeitig essen und reden.,Eat and talk simultaneously.
+1226,derweil,meanwhile,,Derweil warten.,Wait meanwhile.
+1227,inzwischen,meanwhile,,Inzwischen fertig.,Meanwhile done.
+1228,vorher,beforehand,,Vorher anrufen.,Call beforehand.
+1229,nachher,afterwards,,Nachher treffen.,Meet afterwards.
+1230,immer,always,,Immer pünktlich.,Always on time.
+1231,nie,never,,Nie vergessen.,Never forget.
+1232,oft,often,,Oft kommen.,Come often.
+1233,selten,rarely,,Selten trinken.,Rarely drink.
+1234,manchmal,sometimes,,Manchmal regnet es.,Sometimes it rains.
+1235,häufig,frequently,,Häufig benutzt.,Frequently used.
+1236,gelegentlich,occasionally,,Gelegentlich mal.,Occasionally.
+1237,regelmäßig,regularly,,Regelmäßig kommen.,Come regularly.
+1238,ständig,constantly,,Ständig läuten.,Constantly ringing.
+1239,meistens,mostly,,Meistens sonnig.,Mostly sunny.
+1240,gewöhnlich,usually,,Gewöhnlich ja.,Usually yes.
+1241,normalerweise,normally,,Normalerweise nicht.,Normally not.
+1242,typischerweise,typically,,Typischerweise teuer.,Typically expensive.
+1243,üblicherweise,usually,,Üblicherweise so.,Usually like that.
+1244,ausnahmsweise,exceptionally,,Ausnahmsweise mal.,Exceptionally once.
+1245,zufällig,by chance,,Zufällig getroffen.,Met by chance.
+1246,absichtlich,on purpose,,Absichtlich langsam.,On purpose slowly.
+1247,unabsichtlich,accidentally,,Unabsichtlich fallen lassen.,Drop accidentally.
+1248,freiwillig,voluntarily,,Freiwillig mitkommen.,Come voluntarily.
+1249,zwangsweise,compulsorily,,Zwangsweise lachen.,Have to laugh.
+1250,gerne,gladly,,Gerne helfen.,Gladly help.
+1251,ungern,reluctantly,,Ungern zugeben.,Reluctantly admit.
+1252,lieber,rather,,Lieber Tee.,Rather tea.
+1253,am liebsten,preferably,,Am liebsten Kaffee.,Preferably coffee.
+1254,höchstens,at most,,Höchstens fünf.,At most five.
+1255,mindestens,at least,,Mindestens zehn.,At least ten.
+1256,etwa,about,,Etwa 20 Euro.,About 20 euros.
+1257,ungefähr,approximately,,Ungefähr richtig.,Approximately right.
+1258,circa,circa,,Circa 100.,Circa 100.
+1259,plus,plus,,Zehn plus fünf.,Ten plus five.
+1260,minus,minus,,Zwanzig minus acht.,Twenty minus eight.
+1261,mal,times,,Sechs mal sieben.,Six times seven.
+1262,geteilt durch,divided by,,Hundert geteilt durch vier.,Hundred divided by four.
+1263,gleich,equals,,Fünf plus fünf gleich zehn.,Five plus five equals ten.
+1264,prozent,percent,,Fünfzig Prozent.,Fifty percent.
+1265,halb,half,,Halb acht.,Half past seven.
+1266,viertel,quarter,,Viertel vor neun.,Quarter to nine.
+1267,drittel,third,,Ein Drittel.,One third.
+1268,ganz,whole,,Ganz Deutschland.,All of Germany.
+1269,halb,half,,Halb leer.,Half empty.
+1270,voll,full,,Voll besetzt.,Fully booked.
+1271,leer,empty,,Leer ausgehen.,Come away empty.
+1272,teilweise,partly,,Teilweise sonnig.,Partly sunny.
+1273,vollständig,completely,,Vollständig leer.,Completely empty.
+1274,ganz,quite,,Ganz nett.,Quite nice.
+1275,total,totally,,Total voll.,Totally full.
+1276,absolut,absolutely,,Absolut leer.,Absolutely empty.
+1277,völlig,completely,,Völlig fertig.,Completely done.
+1278,sehr,very,,Sehr voll.,Very full.
+1279,äußerst,extremely,,Äußerst leer.,Extremely empty.
+1280,besonders,particularly,,Besonders voll.,Particularly full.
+1281,außerordentlich,extraordinarily,,Außerordentlich gut.,Extraordinarily good.
+1282,ungeheuer,tremendously,,Ungeheuer laut.,Tremendously loud.
+1283,enorm,enormously,,Enorm teuer.,Enormously expensive.
+1284,riesig,huge,,Riesig groß.,Huge.
+1285,winzig,tiny,,Winzig klein.,Tiny.
+1286,gigantisch,gigantic,,Gigantisch!,Gigantic!
+1287,minimal,minimal,,Minimaler Preis.,Minimal price.
+1288,maximal,maximum,,Maximalgeschwindigkeit.,Maximum speed.
+1289,optimal,optimal,,Optimale Lösung.,Optimal solution.
+1290,perfekt,perfect,,Perfekt!,Perfect!
+1291,ideal,ideal,,Ideales Wetter.,Ideal weather.
+1292,exzellent,excellent,,Exzellent!,Excellent!
+1293,fantastisch,fantastic,,Fantastisch!,Fantastic!
+1294,wunderbar,wonderful,,Wunderbar!,Wonderful!
+1295,herrlich,gorgeous,,Herrliches Essen!,Gorgeous food!
+1296,traumhaft,dreamy,,Traumhaft schön.,Dreamy beautiful!
+1297,zauberhaft,enchanting,,Zauberhaft!,Enchanting!
+1298,hinreißend,ravishing,,Hinreißend!,Ravishing!
+1299,bezaubernd,charming,,Bezaubernd!,Charming!
+1300,liebenswert,lovable,,Liebenswerter Mensch.,Lovable person.
+1301,nett,nice,,Nett von dir.,Nice of you.
+1302,freundlich,friendly,,Freundliches Personal.,Friendly staff.
+1303,höflich,polite,,Höflich fragen.,Ask politely.
+1304,hilfsbereit,helpful,,Hilfsbereit sein.,Be helpful.
+1305,geduldig,patient,,Geduldig warten.,Wait patiently.
+1306,tolerant,tolerant,,Tolerant sein.,Be tolerant.
+1307,offen,open,,Offen sprechen.,Speak openly.
+1308,ehrlich,honest,,Ehrlich sein.,Be honest.
+1309,aufrichtig,sincere,,Aufrichtig gemeint.,Sincerely meant.
+1310,fair,fair,,Fair spielen.,Play fair.
+1311,gerecht,just,,Gerecht teilen.,Share fairly.
+1312,treu,loyal,,Treu bleiben.,Stay loyal.
+1313,zuverlässig,reliable,,Zuverlässiger Partner.,Reliable partner.
+1314,pünktlich,punctual,,Pünktlich kommen.,Come on time.
+1315,fleißig,diligent,,Fleißig lernen.,Study diligently.
+1316,intelligent,intelligent,,Intelligenter Mensch.,Intelligent person.
+1317,klug,smart,,Kluge Entscheidung.,Smart decision.
+1318,weise,wise,,Weise Worte.,Wise words.
+1319,kreativ,creative,,Kreative Idee.,Creative idea.
+1320,originell,original,,Originelles Geschenk.,Original gift.
+1321,witzig,witty,,Witziger Spruch.,Witty saying.
+1322,humorvoll,humorous,,Humorvoller Film.,Humorous movie.
+1323,lustig,funny,,Lustige Geschichte.,Funny story.
+1324,fröhlich,cheerful,,Fröhlicher Mensch.,Cheerful person.
+1325,heiter,merry,,Heitere Stimmung.,Merry mood.
+1326,glücklich,happy,,Glückliche Familie.,Happy family.
+1327,zufrieden,satisfied,,Zufriedener Kunde.,Satisfied customer.
+1328,stolz,proud,,Stolz auf das Ergebnis.,Proud of the result.
+1329,dankbar,grateful,,Dankbar sein.,Be grateful.
+1330,froh,joyful,,Froh über das Geschenk.,Joyful about the gift.
+1331,begeistert,enthusiastic,,Begeistert applaudieren.,Applaud enthusiastically.
+1332,fasziniert,fascinated,,Fasziniert zuschauen.,Watch fascinated.
+1333,interessiert,interested,,Interessiert zuhören.,Listen interested.
+1334,neugierig,curious,,Neugieriges Kind.,Curious child.
+1335,mutig,brave,,Mutig sein.,Be brave.
+1336,tapfer,valiant,,Tapfer kämpfen.,Fight valiantly.
+1337,stark,strong,,Stark bleiben.,Stay strong.
+1338,kraftvoll,powerful,,Kraftvoller Auftritt.,Powerful performance.
+1339,energisch,energetic,,Energisch arbeiten.,Work energetically.
+1340,lebhaft,lively,,Lebhaftes Gespräch.,Lively conversation.
+1341,aktiv,active,,Aktives Mitglied.,Active member.
+1342,dynamisch,dynamic,,Dynamische Entwicklung.,Dynamic development.
+1343,ruhig,calm,,Ruhige See.,Calm sea.
+1344,gelassen,composed,,Gelassen reagieren.,React composed.
+1345,entspannt,relaxed,,Entspannte Atmosphäre.,Relaxed atmosphere.
+1346,friedlich,peaceful,,Friedliche Zeiten.,Peaceful times.
+1347,sanft,gentle,,Sanfte Brise.,Gentle breeze.
+1348,zart,delicate,,Zarte Berührung.,Delicate touch.
+1349,weich,soft,,Weiche Landung.,Soft landing.
+1350,hart,hard,,Harte Zeiten.,Hard times.
+1351,streng,strict,,Strenge Lehrerin.,Strict teacher.
+1352,diszipliniert,disciplined,,Diszipliniertes Team.,Disciplined team.
+1353,ordentlich,tidy,,Ordentliches Zimmer.,Tidy room.
+1354,sauber,clean,,Sauberes Hemd.,Clean shirt.
+1355,schlampig,sloppy,,Schlampige Arbeit.,Sloppy work.
+1356,faul,lazy,,Fauler Tag.,Lazy day.
+1357,träge,lethargic,,Träges Gefühl.,Lethargic feeling.
+1358,langweilig,boring,,Langweiliger Film.,Boring movie.
+1359,spannend,exciting,,Spannendes Buch.,Exciting book.
+1360,interessant,interesting,,Interessanter Vortrag.,Interesting lecture.
+1361,faszinierend,fascinating,,Faszinierende Geschichte.,Fascinating story.
+1362,beeindruckend,impressive,,Beeindruckendes Gebäude.,Impressive building.
+1363,erstaunlich,astonishing,,Erstaunliche Leistung.,Astonishing performance.
+1364,unglaublich,incredible,,Unglaublicher Zufall.,Incredible coincidence.
+1365,wunderbar,wonderful,,Wunderbares Gefühl.,Wonderful feeling.
+1366,schrecklich,awful,,Schreckliches Wetter.,Awful weather.
+1367,furchtbar,terrible,,Furchtbare Nachrichten.,Terrible news.
+1368,grauenhaft,ghastly,,Grauenhafter Anblick.,Ghastly sight.
+1369,entsetzlich,dreadful,,Entsetzliche Kälte.,Dreadful cold.
+1370,fürchterlich,dreadful,,Fürchterlicher Lärm.,Dreadful noise.
+1371,ekelhaft,disgusting,,Ekelhafter Geruch.,Disgusting smell.
+1372,widerlich,repugnant,,Widerliches Essen.,Repugnant food.
+1373,hässlich,ugly,,Hässliches Gebäude.,Ugly building.
+1374,scheußlich,hideous,,Scheußliches Wetter.,Hideous weather.
+1375,traurig,sad,,Traurige Musik.,Sad music.
+1376,deprimiert,depressed,,Depressiv gestimmt.,Depressed mood.
+1377,unglücklich,unhappy,,Unglückliches Ende.,Unhappy ending.
+1378,verzweifelt,desperate,,Verzweifelt suchen.,Search desperately.
+1379,verärgert,irritated,,Verärgert sein.,Be irritated.
+1380,wütend,furious,,Wütend werden.,Get furious.
+1381,böse,mad,,Böse gucken.,Look mad.
+1382,sauer,mad,,Sauer sein.,Be mad.
+1383,genervt,annoyed,,Genervt von Lärm.,Annoyed by noise.
+1384,gestresst,stressed,,Gestresst vom Job.,Stressed from work.
+1385,nervös,nervous,,Nervös vor Prüfung.,Nervous before exam.
+1386,ängstlich,fearful,,Ängstlich sein.,Be fearful.
+1387,furchtlos,fearless,,Furchtlos vorangehen.,Go forward fearlessly.
+1388,schüchtern,shy,,Schüchtern lächeln.,Smile shyly.
+1389,schamlos,shameless,,Schamlos lügen.,Lie shamelessly.
+1390,stolz,proud,,Stolz erfüllt.,Filled with pride.
+1391,arrogant,arrogant,,Arrogantes Verhalten.,Arrogant behavior.
+1392,eingebildet,conceited,,Eingebildeter Typ.,Conceited guy.
+1393,bescheiden,modest,,Bescheiden bleiben.,Stay modest.
+1394,demütig,humble,,Demütig danken.,Thank humbly.
+1395,selbstbewusst,self-confident,,Selbstbewusst auftreten.,Appear self-confident.
+1396,unsicher,insecure,,Unsicher fühlen.,Feel insecure.
+1397,verlegen,embarrassed,,Verlegen lächeln.,Smile embarrassed.
+1398,peinlich,embarrassing,,Peinliche Situation.,Embarrassing situation.
+1399,komisch,odd,,Komisches Gefühl.,Odd feeling.
+1400,lächerlich,ridiculous,,Lächerlich aussehen.,Look ridiculous.
+1401,albern,silly,,Albern lachen.,Laugh silly.
+1402,ernst,serious,,Ernst bleiben.,Stay serious.
+1403,streng,severe,,Strenge Mine.,Severe expression.
+1404,locker,relaxed,,Locker drauf sein.,Be relaxed about it.
+1405,cool,cool,,Cool bleiben.,Stay cool.
+1406,hip,hip,,Hippe Kleidung.,Hip clothing.
+1407,modern,modern,,Modernes Design.,Modern design.
+1408,altmodisch,old-fashioned,,Altmodische Möbel.,Old-fashioned furniture.
+1409,traditionell,traditional,,Traditionelles Fest.,Traditional festival.
+1410,international,international,,Internationaler Flughafen.,International airport.
+1411,lokal,local,,Lokales Geschäft.,Local shop.
+1412,regional,regional,,Regionale Spezialitäten.,Regional specialties.
+1413,national,national,,Nationaler Feiertag.,National holiday.
+1414,global,global,,Globale Erwärmung.,Global warming.
+1415,weltweit,worldwide,,Weltweite Nachrichten.,Worldwide news.
