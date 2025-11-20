@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My German Adjectives Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --green: #238636;
+      --yellow: #d29922;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2 2.4rem;
+      color: var(--accent);
+      margin: 1rem 0 1.5rem;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1rem 0.5rem;
+      border-radius: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 0.5rem;
+      border: 8px solid var(--border);
+    }
+
+    .german {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin: 1rem 0;
+      color: white;
+      line-height: 1.3;
+    }
+
+    .english {
+      font-size: 1.3rem;
+      color: #79c0ff;
+      margin: 1.2rem 0;
+      line-height: 1.4;
+    }
+
+    .example {
+      font-size: 1.2rem;
+      font-style: italic;
+      opacity: 0.9;
+      margin: 0.5rem 0;
+      line-height: 1.6;
+      padding: 0 0.5rem;
+    }
+
+    .stats {
+      margin-top: 1.5rem;
+      font-size: 0.6rem;
+      opacity: 0.8;
+    }
+
+    button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 1.2rem;
+      border-radius: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      width: 100%;
+      max-width: 500px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin: 1rem 0;
+    }
+    button:hover { background: #2ea043; }
+
+    .notes {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    .notes h2 {
+      color: var(--yellow);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      background: #21262d;
+      color: white;
+      border-radius: 1rem;
+      font-size: 1.1rem;
+      border: 1px solid var(--border);
+      min-height: 100px;
+      margin-bottom: 0.8rem;
+      resize: vertical;
+    }
+
+    .note {
+      background: #21262d;
+      padding: 0.9rem;
+      border-radius: 1rem;
+      margin: 0.7rem 0;
+      font-size: 1rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Extra small phones */
+    @media (max-width: 360px) {
+      h1 { font-size: 2rem; }
+      .german { font-size: 2.3rem; }
+      .english { font-size: 1.9rem; }
+      .example { font-size: 1.2rem; }
+      button { font-size: 1.6rem; padding: 1rem; }
+    }
+
+    /* Tablets */
+    @media (min-width: 600px) {
+      h1 { font-size: 3rem; }
+      .german { font-size: 3.5rem; }
+      .english { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>My German Adjectives Trainer</h1>
+
+<div class="card" id="card"></div>
+<button onclick="nextCard()">Next Card →</button>
+
+<div class="notes">
+  <h2>Notes – <span id="currentWord"></span></h2>
+  <textarea id="noteInput" placeholder="Add your personal note or mnemonic..."></textarea>
+  <button onclick="saveNote()" style="background:#d29922;font-size:1.3rem;padding:1rem;">Save Note</button>
+  <div id="notesList"></div>
+</div>
+
+<script>
+// ==================== 20 ADJECTIVES CSV ====================
+const csvText = `
+No,English,Positive (Positiv),Comparative (Komparativ),Superlative (Superlativ),Superlative_with_am (am + Superlativ),Example_Sentence,Translation
+1,good,gut,besser,best-,am besten,Dieses Restaurant ist am besten.,This restaurant is the best.
+2,much/many,viel,mehr,meist-,am meisten,Sie hat am meisten Bücher.,She has the most books.
+3,little,wenig,weniger,wenigst-,am wenigsten,Er verdient am wenigsten.,He earns the least.
+4,high/tall,hoch,höher,höchst-,am höchsten,Der Baum ist am höchsten.,The tree is the tallest.
+5,old,alt,älter,ältest-,am ältesten,Der Wein ist am ältesten.,The wine is the oldest.
+6,young,jung,jünger,jüngst-,am jüngsten,Die Studentin ist am jüngsten.,The student is the youngest.
+7,big,groß,größer,größt-,am größten,Der Elefant ist am größten.,The elephant is the biggest.
+8,small,klein,kleiner,kleinst-,am kleinsten,Die Maus ist am kleinsten.,The mouse is the smallest.
+9,gladly,gern,lieber,liebst-,am liebsten,Ich lese am liebsten Romane.,I like reading novels best.
+10,bad,schlecht,schlechter,schlechtest-,am schlechtesten,Das Ergebnis war am schlechtesten.,The result was the worst.
+11,near,nah,näher,nächst-,am nächsten,Das Hotel ist am nächsten.,The hotel is the nearest.
+12,far,weit,weiter,weitest-,am weitesten,Neuseeland ist am weitesten.,New Zealand is the farthest.
+13,hot,heiß,heißer,heißest-,am heißesten,Der Sommer war am heißesten.,The summer was the hottest.
+14,cold,kalt,kälter,kältest-,am kältesten,Der Schnee ist am kältesten.,The snow is the coldest.
+15,fast,schnell,schneller,schnellst-,am schnellsten,Das Motorrad ist am schnellsten.,The motorcycle is the fastest.
+16,slow,langsam,langsamer,langsamst-,am langsamsten,Der Verkehr ist am langsamsten.,The traffic is the slowest.
+17,well (feel),wohl,wohler,wohlst-,am wohlsten,Im Bett fühle ich mich am wohlsten.,I feel best in bed.
+18,expensive,teuer,teurer,teuerst-,am teuersten,Das Juwel ist am teuersten.,The jewel is the most expensive.
+19,cheap,günstig,günstiger,günstigst-,am günstigsten,Der Markt ist am günstigsten.,The market is the cheapest.
+20,interesting,interessant,interessanter,interessantest-,am interessantesten,Die Geschichte ist am interessantesten.,The story is the most interesting.
+21,boring,langweilig,langweiliger,langweiligst-,am langweiligsten,Das Buch war am langweiligsten.,The book was the most boring.
+22,beautiful,schön,schöner,schönst-,am schönsten,Der Park ist am schönsten.,The park is the most beautiful.
+23,ugly,hässlich,hässlicher,hässlichst-,am hässlichsten,Der Müll ist am hässlichsten.,The garbage is the ugliest.
+24,smart,klug,klüger,klügst-,am klügsten,Der Wissenschaftler ist am klügsten.,The scientist is the smartest.
+25,strong,stark,stärker,stärkst-,am stärksten,Das Team ist am stärksten.,The team is the strongest.
+26,weak,schwach,schwächer,schwächst-,am schwächsten,Die Batterie ist am schwächsten.,The battery is the weakest.
+27,early,früh,früher,frühest-,am frühesten,Der Wecker klingelt am frühesten.,The alarm rings the earliest.
+28,late,spät,später,spätest-,am spätesten,Die Nacht ist am spätesten.,The night is the latest.
+29,easy,einfach,einfacher,einfachst-,am einfachsten,Das Rezept ist am einfachsten.,The recipe is the easiest.
+30,difficult,schwierig,schwieriger,schwierigst-,am schwierigsten,Das Problem ist am schwierigsten.,The problem is the most difficult.
+31,often,oft,öfter,öftest-,am öftesten,Das Auto fährt am öftesten.,The car drives most often.
+32,rarely,selten,seltener,seltenst-,am seltensten,Regen fällt am seltensten.,Rain falls the least often.
+33,tasty,lecker,leckerer,leckerst-,am leckersten,Das Eis ist am leckersten.,The ice cream is the tastiest.
+34,comfortable,bequem,bequemer,bequemst-,am bequemsten,Der Schal ist am bequemsten.,The scarf is the most comfortable.
+35,tired,müde,müder,müdest-,am müdesten,Das Kind ist am müdesten.,The child is the most tired.
+36,happy,glücklich,glücklicher,glücklichst-,am glücklichsten,Die Familie ist am glücklichsten.,The family is the happiest.
+37,angry,wütend,wütender,wütendst-,am wütendsten,Der Nachbar war am wütendsten.,The neighbor was the angriest.
+38,funny,lustig,lustiger,lustigst-,am lustigsten,Der Clown ist am lustigsten.,The clown is the funniest.
+39,quiet,ruhig,ruhiger,ruhigst-,am ruhigsten,Das Zimmer ist am ruhigsten.,The room is the quietest.
+40,loud,laut,lauter,lautest-,am lautesten,Der Motor ist am lautesten.,The engine is the loudest.
+41,dangerous,gefährlich,gefährlicher,gefährlichst-,am gefährlichsten,Der Sturm ist am gefährlichsten.,The storm is the most dangerous.
+42,safe,sicher,sicherer,sicherst-,am sichersten,Der Helm ist am sichersten.,The helmet is the safest.
+43,modern,modern,moderner,modernst-,am modernsten,Das Haus ist am modernsten.,The house is the most modern.
+44,important,wichtig,wichtiger,wichtigst-,am wichtigsten,Das Treffen ist am wichtigsten.,The meeting is the most important.
+45,nice,nett,netter,nettest-,am nettesten,Der Brief ist am nettesten.,The letter is the nicest.
+46,friendly,freundlich,freundlicher,freundlichst-,am freundlichsten,Der Hund ist am freundlichsten.,The dog is the friendliest.
+47,healthy,gesund,gesünder,gesündest-,am gesündesten,Der Tee ist am gesündesten.,The tea is the healthiest.
+48,bright,hell,heller,hellst-,am hellsten,Das Licht ist am hellsten.,The light is the brightest.
+49,dark,dunkel,dunkler,dunkelst-,am dunkelsten,Die Höhle ist am dunkelsten.,The cave is the darkest.
+50,sweet,süß,süßer,süßest-,am süßesten,Das Bonbon ist am süßesten.,The candy is the sweetest.
+51,heavy,schwer,schwerer,schwerst-,am schwersten,Der Rucksack ist am schwersten.,The backpack is the heaviest.
+52,light (weight),leicht,leichter,leichtest-,am leichtesten,Der Ballon ist am leichtesten.,The balloon is the lightest.
+53,long,lang,länger,längst-,am längsten,Der Rock ist am längsten.,The skirt is the longest.
+54,short,kurz,kürzer,kürzest-,am kürzesten,Der Film ist am kürzesten.,The movie is the shortest.
+55,warm,warm,wärmer,wärmest-,am wärmsten,Der Ofen ist am wärmsten.,The oven is the warmest.
+56,cool,kühl,kühler,kühlst-,am kühlsten,Der Drink ist am kühlsten.,The drink is the coolest.
+57,rich,reich,reicher,reichst-,am reichsten,Der König ist am reichsten.,The king is the richest.
+58,poor,arm,ärmer,ärmst-,am ärmsten,Der Bettler ist am ärmsten.,The beggar is the poorest.
+59,famous,berühmt,berühmter,berühmtest-,am berühmtesten,Der Star ist am berühmtesten.,The star is the most famous.
+60,clever,schlau,schlauer,schläust-,am schläusten,Der Hase ist am schläusten.,The rabbit is the cleverest.
+61,stupid,dumm,dümmer,dümmst-,am dümmsten,Der Witz war am dümmsten.,The joke was the stupidest.
+62,pretty,hübsch,hübscher,hübschest-,am hübschesten,Die Blume ist am hübschesten.,The flower is the prettiest.
+63,fun,spaßig,spaßiger,spaßigst-,am spaßigsten,Das Fest ist am spaßigsten.,The festival is the most fun.
+64,lazy,faul,fauler,faulst-,am faulsten,Der Koala ist am faulsten.,The koala is the laziest.
+65,hard-working,fleißig,fleißiger,fleißigst-,am fleißigsten,Die Ameise ist am fleißigsten.,The ant is the most hard-working.
+66,soft,weich,weicher,weichest-,am weichesten,Die Wolke ist am weichesten.,The cloud is the softest.
+67,hard,hart,härter,härtest-,am härtesten,Der Fels ist am härtesten.,The rock is the hardest.
+68,polite,höflich,höflicher,höflichst-,am höflichsten,Der Butler ist am höflichsten.,The butler is the most polite.
+69,rude,frech,frecher,frechest-,am frechesten,Der Rüpel ist am frechesten.,The bully is the rudest.
+70,patient,geduldig,geduldiger,geduldigst-,am geduldigsten,Der Fischer ist am geduldigsten.,The fisherman is the most patient.
+71,optimistic,optimistisch,optimistischer,optimistischst-,am optimistischsten,Der Optimist ist am optimistischsten.,The optimist is the most optimistic.
+72,brave,mutig,mutiger,mutigst-,am mutigsten,Der Ritter ist am mutigsten.,The knight is the bravest.
+73,generous,großzügig,großzügiger,großzügigst-,am großzügigsten,Der Spender ist am großzügigsten.,The donor is the most generous.
+74,creative,kreativ,kreativer,kreativst-,am kreativsten,Der Erfinder ist am kreativsten.,The inventor is the most creative.
+75,exciting,spannend,spannender,spannendst-,am spannendsten,Das Abenteuer ist am spannendsten.,The adventure is the most exciting.
+76,relaxing,entspannend,entspannender,entspannendst-,am entspannendsten,Der Strand ist am entspannendsten.,The beach is the most relaxing.
+77,romantic,romantisch,romantischer,romantischst-,am romantischsten,Das Dinner ist am romantischsten.,The dinner is the most romantic.
+78,practical,praktisch,praktischer,praktischst-,am praktischsten,Das Messer ist am praktischsten.,The knife is the most practical.
+79,elegant,elegant,eleganter,elegantest-,am elegantesten,Das Kleid ist am elegantesten.,The dress is the most elegant.
+80,sporty,sportlich,sportlicher,sportlichst-,am sportlichsten,Der Athlet ist am sportlichsten.,The athlete is the most sporty.
+81,lively,lebhaft,lebhafter,lebhaftest-,am lebhaftesten,Die Stadt ist am lebhaftesten.,The city is the liveliest.
+82,calm,ruhig,ruhiger,ruhigst-,am ruhigsten,Der See ist am ruhigsten.,The lake is the calmest.
+83,nervous,nervös,nervöser,nervösest-,am nervösesten,Der Schüler ist am nervösesten.,The student is the most nervous.
+84,confident,selbstbewusst,selbstbewusster,selbstbewusstest-,am selbstbewusstesten,Der Redner ist am selbstbewusstesten.,The speaker is the most confident.
+85,shy,schüchtern,schüchterner,schüchternst-,am schüchternsten,Das Kind ist am schüchternsten.,The child is the shyest.
+86,serious,ernst,ernster,ernstest-,am ernstesten,Der Arzt ist am ernstesten.,The doctor is the most serious.
+87,honest,ehrlich,ehrlicher,ehrlichst-,am ehrlichsten,Der Zeuge ist am ehrlichsten.,The witness is the most honest.
+88,reliable,zuverlässig,zuverlässiger,zuverlässigst-,am zuverlässigsten,Der Zug ist am zuverlässigsten.,The train is the most reliable.
+89,popular,beliebt,beliebter,beliebtest-,am beliebtesten,Das Album ist am beliebtesten.,The album is the most popular.
+90,talented,begabt,begabter,begabtest-,am begabtesten,Der Musiker ist am begabtesten.,The musician is the most talented.
+91,ambitious,ehrgeizig,ehrgeiziger,ehrgeizigst-,am ehrgeizigsten,Der Manager ist am ehrgeizigsten.,The manager is the most ambitious.
+92,modest,bescheiden,bescheidener,bescheidenst-,am bescheidensten,Der Gewinner ist am bescheidensten.,The winner is the most modest.
+93,proud,stolz,stolzer,stolzest-,am stolzesten,Die Eltern sind am stolzesten.,The parents are the proudest.
+94,organized,ordentlich,ordentlicher,ordentlichst-,am ordentlichsten,Der Schrank ist am ordentlichsten.,The closet is the most organized.
+95,messy,unordentlich,unordentlicher,unordentlichst-,am unordentlichsten,Der Tisch ist am unordentlichsten.,The table is the messiest.
+96,lucky,glücklich,glücklicher,glücklichst-,am glücklichsten,Der Gewinner ist am glücklichsten.,The winner is the luckiest.
+97,unlucky,unglücklich,unglücklicher,unglücklichst-,am unglücklichsten,Der Verlierer ist am unglücklichsten.,The loser is the unluckiest.
+98,flexible,flexibel,flexibler,flexibelst-,am flexibelsten,Der Gymnast ist am flexibelsten.,The gymnast is the most flexible.
+99,rigid,steif,steifer,steifest-,am steifesten,Der Stuhl ist am steifesten.,The chair is the most rigid.
+100,charming,charmant,charmanter,charmantest-,am charmantesten,Der Prinz ist am charmantesten.,The prince is the most charming.
+101,gracious,gnädig,gnädiger,gnädigst-,am gnädigsten,Der König ist am gnädigsten.,The king is the most gracious.
+102,grumpy,grantig,grantiger,grantigst-,am grantigsten,Der Zwerg ist am grantigsten.,The dwarf is the grumpiest.
+103,helpful, hilfsbereit, hilfsbereiter, hilfsbereitest-,am hilfsbereitesten,Der Nachbar ist am hilfsbereitesten.,The neighbor is the most helpful.
+104,useless,nutzlos,nutzloser,nutzlosest-,am nutzlosesten,Das Gerät ist am nutzlosesten.,The device is the most useless.
+105,delicious,lecker,leckeren,leckersten-,am leckersten,Das Dessert ist am leckersten.,The dessert is the most delicious.
+106,disgusting,ekelhaft,ekelhafter,ekelhaftest-,am ekelhaftesten,Der Geruch ist am ekelhaftesten.,The smell is the most disgusting.
+107,cozy,gemütlich,gemütlicher,gemütlichst-,am gemütlichsten,Das Sofa ist am gemütlichsten.,The sofa is the coziest.
+108,uncomfortable,unbequem,unbequemer,unbequemst-,am unbequemsten,Der Stuhl ist am unbequemsten.,The chair is the most uncomfortable.
+109,brilliant,brillant,brillianter,brillantest-,am brillantesten,Die Idee ist am brillantesten.,The idea is the most brilliant.
+110,dull,langweilig,langweiliger,langweiligst-,am langweiligsten,Der Tag war am langweiligsten.,The day was the dullest.
+111,energetic,energiegeladen,energiegeladener,energiegeladenst-,am energiegeladensten,Das Kind ist am energiegeladensten.,The child is the most energetic.
+112,exhausted,erschöpft,erschöpfter,erschöpftest-,am erschöpftesten,Der Läufer ist am erschöpftesten.,The runner is the most exhausted.
+113,fresh,frisch,frischer,frischest-,am frischesten,Der Salat ist am frischesten.,The salad is the freshest.
+114,stale,abgestanden,abgestandener,abgestandenst-,am abgestandensten,Das Brot ist am abgestandensten.,The bread is the stalest.
+115,generous,großzügig,großzügiger,großzügigst-,am großzügigsten,Der Spender ist am großzügigsten.,The donor is the most generous.
+116,stingy,geizig,geiziger,geizigst-,am geizigsten,Der Geizhals ist am geizigsten.,The miser is the stingiest.
+117,hopeful,hoffnungsvoll,hoffnungsvoller,hoffnungsvollst-,am hoffnungsvollsten,Der Optimist ist am hoffnungsvollsten.,The optimist is the most hopeful.
+118,desperate,verzweifelt,verzweifelter,verzweifeltst-,am verzweifeltsten,Der Patient ist am verzweifeltsten.,The patient is the most desperate.
+119,imaginative,imaginativ,imaginativer,imaginativst-,am imaginativsten,Das Kind ist am imaginativsten.,The child is the most imaginative.
+120,ordinary,gewöhnlich,gewöhnlicher,gewöhnlichst-,am gewöhnlichsten,Der Tag ist am gewöhnlichsten.,The day is the most ordinary.
+121,jolly,fröhlich,fröhlicher,fröhlichst-,am fröhlichsten,Der Clown ist am fröhlichsten.,The clown is the jolliest.
+122,melancholy,melancholisch,melancholischer,melancholischst-,am melancholischsten,Der Poet ist am melancholischsten.,The poet is the most melancholy.
+123,keen,eifrig,eifriger,eifrigst-,am eifrigsten,Der Schüler ist am eifrigsten.,The student is the keenest.
+124,indifferent,gleichgültig,gleichgültiger,gleichgültigst-,am gleichgültigsten,Der Zuschauer ist am gleichgültigsten.,The spectator is the most indifferent.
+125,luxurious,luxuriös,luxuriöser,luxuriösest-,am luxuriösesten,Das Hotel ist am luxuriösesten.,The hotel is the most luxurious.
+126,simple,einfach,einfacher,einfachst-,am einfachsten,Das Design ist am einfachsten.,The design is the simplest.
+127,magnificent,magnifizent,magnifizenter,magnifizentest-,am magnifizentesten,Der Palast ist am magnifizentesten.,The palace is the most magnificent.
+128,modest,bescheiden,bescheidener,bescheidenst-,am bescheidensten,Das Haus ist am bescheidensten.,The house is the most modest.
+129,noble,edel,edler,edelst-,am edelsten,Der Ritter ist am edelsten.,The knight is the noblest.
+130,base,gewöhnlich,gewöhnlicher,gewöhnlichst-,am gewöhnlichsten,Der Dieb ist am gewöhnlichsten.,The thief is the basest.
+131,obnoxious,widerlich,widerlicher,widerlichst-,am widerlichsten,Der Geruch ist am widerlichsten.,The smell is the most obnoxious.
+132,pleasant,angenehm,angenehmer,angenehmst-,am angenehmsten,Das Wetter ist am angenehmsten.,The weather is the most pleasant.
+133,powerful,mächtig,mächtiger,mächtigst-,am mächtigsten,Der Präsident ist am mächtigsten.,The president is the most powerful.
+134,feeble,schwach,schwächer,schwächst-,am schwächsten,Der Alte ist am schwächsten.,The old man is the feeblest.
+135,quick,schnell,schneller,schnellst-,am schnellsten,Der Hase ist am schnellsten.,The rabbit is the quickest.
+136,sluggish,träge,träger,trägst-,am trägsten,Die Schnecke ist am trägsten.,The snail is the most sluggish.
+137,radiant,strahlend,strahlender,strahlendst-,am strahlendsten,Die Sonne ist am strahlendsten.,The sun is the most radiant.
+138,dim,düster,düsterer,düsterst-,am düstersten,Der Himmel ist am düstersten.,The sky is the dimmest.
+139,savage,wild,wilder,wildst-,am wildesten,Der Tiger ist am wildesten.,The tiger is the most savage.
+140,tame,zahm,zähmer,zahmst-,am zahmsten,Das Lamm ist am zahmsten.,The lamb is the tamest.
+141,tender,zart,zarter,zartest-,am zartesten,Die Blume ist am zartesten.,The flower is the tenderest.
+142,rough,rau,rauer,raust-,am rauesten,Der Sand ist am rauesten.,The sand is the roughest.
+143,unique,einzigartig,einzigartiger,einzigartigst-,am einzigartigsten,Das Kunstwerk ist am einzigartigsten.,The artwork is the most unique.
+144,common,alltäglich,alltäglicher,alltäglichst-,am alltäglichsten,Das Essen ist am alltäglichsten.,The food is the most common.
+145,vibrant,lebendig,lebendiger,lebendigst-,am lebendigsten,Die Stadt ist am lebendigsten.,The city is the most vibrant.
+146,dull, matt,matter,mattst-,am mattsten,Die Farbe ist am mattsten.,The color is the dullest.
+147,witty,geistreich,geistlicher,geistreichst-,am geistreichsten,Der Komiker ist am geistreichsten.,The comedian is the wittiest.
+148,clumsy,ungeschickt,ungeschickter,ungeschicktest-,am ungeschicktesten,Der Clown ist am ungeschicktesten.,The clown is the clumsiest.
+149,youthful,jugendlich,jugendlicher,jugendlichst-,am jugendlichsten,Das Mädchen ist am jugendlichsten.,The girl is the most youthful.
+150,ancient,antik,antiker,antikst-,am antiksten,Die Ruine ist am antiksten.,The ruin is the most ancient.
+151,zealous,eifrig,eifriger,eifrigst-,am eifrigsten,Der Fan ist am eifrigsten.,The fan is the most zealous.
+152,apathetic,apathisch,apathischer,apathischst-,am apathischsten,Der Zuschauer ist am apathischsten.,The spectator is the most apathetic.
+153,adorable,niedlich,niedlicher,niedlichst-,am niedlichsten,Das Kätzchen ist am niedlichsten.,The kitten is the most adorable.
+154,repulsive,abstoßend,abstoßender,abstoßendst-,am abstoßendsten,Das Insekt ist am abstoßendsten.,The insect is the most repulsive.
+155,bold,kühn,kühner,kühnst-,am kühnsten,Der Entdecker ist am kühnsten.,The explorer is the boldest.
+156,timid,ängstlich,ängstlicher,ängstlichst-,am ängstlichsten,Das Reh ist am ängstlichsten.,The deer is the most timid.
+157,candid,offen,offener,offensten-,am offensten,Der Freund ist am offensten.,The friend is the most candid.
+158,secretive,verschlossen,verschlossener,verschlossenst-,am verschlossensten,Der Spion ist am verschlossensten.,The spy is the most secretive.
+159,dynamic,dynamisch,dynamischer,dynamischst-,am dynamischsten,Der Leader ist am dynamischsten.,The leader is the most dynamic.
+160,static,statisch,statischer,statischst-,am statischsten,Das Bild ist am statischsten.,The picture is the most static.
+161,exquisite,exquisit,exquisiter,exquisitest-,am exquisitesten,Das Juwel ist am exquisitesten.,The jewel is the most exquisite.
+162,crude,grob,grober,grobst-,am grobsten,Der Stein ist am grobsten.,The stone is the crudest.
+163,fervent,leidenschaftlich,leidenschaftlicher,leidenschaftlichst-,am leidenschaftlichsten,Der Künstler ist am leidenschaftlichsten.,The artist is the most fervent.
+164,indifferent,indifferent,indifferenter,indifferentest-,am indifferentesten,Der Beobachter ist am indifferentesten.,The observer is the most indifferent.
+165,gorgeous,görrig,görriger,görrigst-,am görrigsten,Die Aussicht ist am görrigsten.,The view is the most gorgeous.
+166,plain,einfach,einfacher,einfachst-,am einfachsten,Das Kleid ist am einfachsten.,The dress is the plainest.
+167,humorous,humorvoll,humorvoller,humorvollsten-,am humorvollsten,Der Autor ist am humorvollsten.,The author is the most humorous.
+168,grave,ernst,ernster,ernstest-,am ernstesten,Der Moment ist am ernstesten.,The moment is the gravest.
+169,ideal,ideal,idealer,idealst-,am idealsten,Der Plan ist am idealsten.,The plan is the most ideal.
+170,flawed,fehlerhaft,fehlerhafter,fehlerhaftest-,am fehlerhaftesten,Das System ist am fehlerhaftesten.,The system is the most flawed.
+171,jovial,jovial,jovialer,jovialst-,am jovialsten,Der Gastgeber ist am jovialsten.,The host is the most jovial.
+172,morose,mürrisch,mürrischer,mürrischst-,am mürrischsten,Der Bär ist am mürrischsten.,The bear is the most morose.
+173,keen (sharp),scharf,scharfer,scharfst-,am schärfsten,Das Messer ist am schärfsten.,The knife is the keenest.
+174,blunt, stumpf,stumpfer,stumpfsten-,am stumpfsten,Der Stift ist am stumpfsten.,The pencil is the bluntest.
+175,lucid,klar,klarer,klarest-,am klarsten,Die Erklärung ist am klarsten.,The explanation is the most lucid.
+176,obscure,obskur,obskurer,obskurst-,am obskursten,Der Text ist am obskursten.,The text is the most obscure.
+177,majestic,majestätisch,majestätischer,majestätischst-,am majestätischsten,Der Berg ist am majestätischsten.,The mountain is the most majestic.
+178,humble,bescheiden,bescheidener,bescheidenst-,am bescheidensten,Der Held ist am bescheidensten.,The hero is the most humble.
+179,notorious,berüchtigt,berüchtigter,berüchtigtsten-,am berüchtigtsten,Der Verbrecher ist am berüchtigtsten.,The criminal is the most notorious.
+180,respectable,respektabel,respektabler,respektabelst-,am respektabelsten,Der Bürger ist am respektabelsten.,The citizen is the most respectable.
+181,opulent,opulent,opulenter,opulentest-,am opulentesten,Das Schloss ist am opulentesten.,The castle is the most opulent.
+182,austere,asketisch,asketischer,asketischst-,am asketischsten,Der Mönch ist am asketischsten.,The monk is the most austere.
+183,perky, munter,munterer,muntersten-,am muntersten,Das Mädchen ist am muntersten.,The girl is the perkiest.
+184,lethargic, lethargisch,lethargischer,lethargischst-,am lethargischsten,Der Faultier ist am lethargischsten.,The sloth is the most lethargic.
+185,prudent,vorsichtig,vorsichtiger,vorsichtigst-,am vorsichtigsten,Der Fahrer ist am vorsichtigsten.,The driver is the most prudent.
+186,reckless,tollkühn,tollkühner,tollkühnen-,am tollkühnen,Der Rennfahrer ist am tollkühnen.,The racer is the most reckless.
+187,rustic,ländlich,ländlicher,ländlichst-,am ländlichsten,Das Dorf ist am ländlichsten.,The village is the most rustic.
+188,urban,städtisch,städtischer,städtischst-,am städtischsten,Die Metropole ist am städtischsten.,The metropolis is the most urban.
+189,sacred,heilig,heiliger,heiligst-,am heiligsten,Der Tempel ist am heiligsten.,The temple is the most sacred.
+190,profane,profan,profener,profanest-,am profanesten,Der Witz ist am profanesten.,The joke is the most profane.
+191,serene,seren,serener,serenest-,am serenesten,Der Garten ist am serenesten.,The garden is the most serene.
+192,chaotic,chaotisch,chaotischer,chaotischst-,am chaotischsten,Die Party ist am chaotischsten.,The party is the most chaotic.
+193,thrifty,sparsam,sparsamer,sparsamst-,am sparsamsten,Der Sparer ist am sparsamsten.,The saver is the most thrifty.
+194,wasteful,verschwenderisch,verschwenderischer,verschwenderischst-,am verschwenderischsten,Der Verschwender ist am verschwenderischsten.,The waster is the most wasteful.
+195,vigorous,kräftig,kräftiger,kräftigst-,am kräftigsten,Der Sportler ist am kräftigsten.,The athlete is the most vigorous.
+196,fragile,zart,zarter,zartest-,am zartesten,Das Glas ist am zartesten.,The glass is the most fragile.
+197,warmhearted,warmherzig,warmherziger,warmherzigst-,am warmherzigsten,Die Nonne ist am warmherzigsten.,The nun is the most warmhearted.
+198,cruel,grausam,grausamer,grausamst-,am grausamsten,Der Tyrann ist am grausamsten.,The tyrant is the cruelest.
+199,yielding,nachgiebig,nachgiebiger,nachgiebigst-,am nachgiebigsten,Der Gummi ist am nachgiebigsten.,The rubber is the most yielding.
+200,rigid,un nachgiebig,un nachgiebiger,un nachgiebigst-,am un nachgiebigsten,Der Stahl ist am un nachgiebigsten.,The steel is the most rigid.
+201,affluent,wohlhabend,wohlhabender,wohlhabendst-,am wohlhabendsten,Der Milliardär ist am wohlhabendsten.,The billionaire is the most affluent.
+202,indigent,bedürftig,bedürftiger,bedürftigst-,am bedürftigsten,Der Obdachlose ist am bedürftigsten.,The homeless is the most indigent.
+203,bountiful,reichlich,reichlicher,reichlichst-,am reichlichsten,Die Ernte ist am reichlichsten.,The harvest is the most bountiful.
+204,scarce,knapp,knapper,knappst-,am knappsten,Das Wasser ist am knappsten.,The water is the scarcest.
+205,candid,aufrichtig,aufrichtiger,aufrichtigst-,am aufrichtigsten,Der Bekannte ist am aufrichtigsten.,The acquaintance is the most candid.
+206,deceitful,täuschend,täuschender,täuschendst-,am täuschendsten,Der Betrüger ist am täuschendsten.,The fraud is the most deceitful.
+207,dignified,würdevoll,würdevoller,würdevollsten-,am würdevollsten,Der Diplomat ist am würdevollsten.,The diplomat is the most dignified.
+208,shabby,schäbig,schäbiger,schäbigst-,am schäbigsten,Der Mantel ist am schäbigsten.,The coat is the shabbiest.
+209,elegant,anmutig,anmutiger,anmutigst-,am anmutigsten,Die Tänzerin ist am anmutigsten.,The dancer is the most elegant.
+210,gaudy,grell,greller,grellsten-,am grellsten,Das Kleid ist am grellsten.,The dress is the gaudiest.
+211,fervid,heißblütig,heißblütiger,heißblütigst-,am heißblütigsten,Der Liebhaber ist am heißblütigsten.,The lover is the most fervid.
+212,phlegmatic,phlegmatisch,phlegmatischer,phlegmatischst-,am phlegmatischsten,Der Philosoph ist am phlegmatischsten.,The philosopher is the most phlegmatic.
+213,genteel,wohl erzogen,wohlerzogener,wohlerzogensten-,am wohlerzogensten,Die Dame ist am wohlerzogensten.,The lady is the most genteel.
+214,vulgar,vulgär,vulgärer,vulgärsten-,am vulgärsten,Der Witz ist am vulgärsten.,The joke is the most vulgar.
+215,hospitable,gastfreundlich,gastfreundlicher,gastfreundlichst-,am gastfreundlichsten,Der Wirt ist am gastfreundlichsten.,The host is the most hospitable.
+216,inhospitable,ungastfreundlich,ungastfreundlicher,ungastfreundlichst-,am ungastfreundlichsten,Der Fremde ist am ungastfreundlichsten.,The stranger is the most inhospitable.
+217,impeccable,fleckenlos,fleckloser,fleckenlosest-,am fleckenlosesten,Das Hemd ist am fleckenlosesten.,The shirt is the most impeccable.
+218,tainted,verdorben,verdorbenen,verdorbensten-,am verdorbensten,Das Fleisch ist am verdorbensten.,The meat is the most tainted.
+219,jubilant,jubilierend,jubilierender,jubilierendst-,am jubilierendsten,Die Fans sind am jubilierendsten.,The fans are the most jubilant.
+220,mournful,traurig,trauriger,traurigsten-,am traurigsten,Die Witwe ist am traurigsten.,The widow is the most mournful.
+221,kindhearted,herzensgut,herzensguter,herzensgutsten-,am herzensgutsten,Die Großmutter ist am herzensgutsten.,The grandmother is the most kindhearted.
+222,malicious,böswillig,böswilliger,böswilligst-,am böswilligsten,Der Feind ist am böswilligsten.,The enemy is the most malicious.
+223,languid,schlaff,schlaffer,schlaffsten-,am schlaffsten,Die Blume ist am schlaffsten.,The flower is the most languid.
+224,vital,vital,vitaler,vitalsten-,am vitalsten,Der Sportler ist am vitalsten.,The athlete is the most vital.
+225,mellow, weich,weicher,weichest-,am weichesten,Der Wein ist am weichesten.,The wine is the mellowest.
+226,harsh,hart,härter,härtest-,am härtesten,Der Wind ist am härtesten.,The wind is the harshest.
+227,naive,naiv,naiver,naivsten-,am naivsten,Das Kind ist am naivsten.,The child is the most naive.
+228,sophisticated,verfeinert,verfeinerter,verfeinertesten-,am verfeinertesten,Die Gesellschaft ist am verfeinertesten.,The society is the most sophisticated.
+229,obese,fett,fetter,fettsten-,am fettsten,Der Sumo ist am fettsten.,The sumo is the most obese.
+230,slender,schlank,schlanker,schlanksten-,am schlanksten,Das Model ist am schlanksten.,The model is the most slender.
+231,ominous,bedrohlich,bedrohlicher,bedrohlichst-,am bedrohlichsten,Die Wolke ist am bedrohlichsten.,The cloud is the most ominous.
+232,benign,gütig,gütiger,gütigst-,am gütigsten,Der Arzt ist am gütigsten.,The doctor is the most benign.
+233,oppressive,unterdrückend,unterdrückender,unterdrückendst-,am unterdrückendsten,Der Diktator ist am unterdrückendsten.,The dictator is the most oppressive.
+234,liberating, befreiend,befreiender,befreiendst-,am befreiendsten,Der Moment ist am befreiendsten.,The moment is the most liberating.
+235,palpable, greifbar,greifbarer,greifbarsten-,am greifbarsten,Die Spannung ist am greifbarsten.,The tension is the most palpable.
+236,ethereal, ätherisch,ätherischer,ätherischst-,am ätherischsten,Die Musik ist am ätherischsten.,The music is the most ethereal.
+237,quaint, malerisch,malerischer,malerischst-,am malerischsten,Das Dorf ist am malerischsten.,The village is the most quaint.
+238,monstrous, monströs,monströser,monströsesten-,am monströsesten,Das Monster ist am monströsesten.,The monster is the most monstrous.
+239,radiant, strahlend,strahlender,strahlendst-,am strahlendsten,Das Lächeln ist am strahlendsten.,The smile is the most radiant.
+240,somber, düster,düsterer,düstersten-,am düstersten,Die Stimmung ist am düstersten.,The mood is the most somber.
+241,tactful, taktvoll,taktvoller,taktvollsten-,am taktvollsten,Der Diplomat ist am taktvollsten.,The diplomat is the most tactful.
+242,blunt, direkt,direkter,direktsten-,am direktsten,Der Kritiker ist am direktsten.,The critic is the most blunt.
+243,urbane, weltgewandt,weltgewandter,weltgewandtsten-,am weltgewandtsten,Der Reisende ist am weltgewandtsten.,The traveler is the most urbane.
+244,provincial, provinziell,provinzieller,provinziellst-,am provinziellsten,Der Bauer ist am provinziellsten.,The farmer is the most provincial.
+245,vain, eitel,eitler,eitelsten-,am eitelsten,Der Schauspieler ist am eitelsten.,The actor is the vainest.
+246,modest, bescheiden,bescheidener,bescheidensten-,am bescheidensten,Der Künstler ist am bescheidensten.,The artist is the most modest.
+247,wary, wachsam,wachsamer,wachsamsten-,am wachsamsten,Der Wächter ist am wachsamsten.,The guard is the wariest.
+248,heedless, achtlos,achtloser,achtlosesten-,am achtlosesten,Der Junge ist am achtlosesten.,The boy is the most heedless.
+249,xenophobic, xenophob,xenophober,xenophobsten-,am xenophobsten,Der Politiker ist am xenophobsten.,The politician is the most xenophobic.
+250,cosmopolitan, kosmopolitisch,kosmopolitischer,kosmopolitischst-,am kosmopolitischsten,Der Nomade ist am kosmopolitischsten.,The nomad is the most cosmopolitan.
+251,yielding, nachgiebig,nachgiebiger,nachgiebigsten-,am nachgiebigsten,Das Material ist am nachgiebigsten.,The material is the most yielding.
+252,stubborn, stur,sturer,stursten-,am stursten,Der Esel ist am stursten.,The donkey is the most stubborn.
+253,zany, verrückt,verrückter,verrücktest-,am verrücktesten,Der Clown ist am verrücktesten.,The clown is the zaniest.
+254,sane, vernünftig,vernünftiger,vernünftigsten-,am vernünftigsten,Der Berater ist am vernünftigsten.,The advisor is the sanest.
+255,alluring, verlockend,verlockender,verlockendsten-,am verlockendsten,Die Sirene ist am verlockendsten.,The siren is the most alluring.
+256,repellent, abweisend,abweisender,abweisendsten-,am abweisendsten,Der Duft ist am abweisendsten.,The scent is the most repellent.
+257,bucolic, idyllisch,idyllischer,idyllischsten-,am idyllischsten,Das Land ist am idyllischsten.,The countryside is the most bucolic.
+258,metropolitan,metropolenhaft,metropolenhafter,metropolenhaftesten-,am metropolenhaftesten,Die Stadt ist am metropolenhaftesten.,The city is the most metropolitan.
+259,captivating, fesselnd,fesselnder,fesselndsten-,am fesselndsten,Das Buch ist am fesselndsten.,The book is the most captivating.
+260,tedious, ermüdend,ermüdender,ermüdendsten-,am ermüdendsten,Die Rede ist am ermüdendsten.,The speech is the most tedious.
+261,dapper, schick,schicker,schicksten-,am schicksten,Der Herr ist am schicksten.,The gentleman is the dapperest.
+262,sloppy, schlampig,schlampiger,schlampigsten-,am schlampigsten,Der Raum ist am schlampigsten.,The room is the sloppiest.
+263,ecstatic, ekstatisch,ekstatischer,ekstatischsten-,am ekstatischsten,Die Menge ist am ekstatischsten.,The crowd is the most ecstatic.
+264,despondent, mutlos,mutloser,mutlosesten-,am mutlosesten,Der Verlierer ist am mutlosesten.,The loser is the most despondent.
+265,fickle, launisch,launischer,launischsten-,am launischsten,Das Wetter ist am launischsten.,The weather is the most fickle.
+266,steadfast, standhaft,standhafter,standhaftesten-,am standhaftesten,Der Freund ist am standhaftesten.,The friend is the most steadfast.
+267,garrulous, geschwätzig,geschwätzigeren,geschwätzigsten-,am geschwätzigsten,Der Nachbar ist am geschwätzigsten.,The neighbor is the most garrulous.
+268,taciturn, schweigsam,schweigsamer,schweigsamsten-,am schweigsamsten,Der Mönch ist am schweigsamsten.,The monk is the most taciturn.
+269,hale, gesund,gesünder,gesündesten-,am gesündesten,Der Greis ist am gesündesten.,The old man is the most hale.
+270,debilitated, geschwächt,geschwächter,geschwächtesten-,am geschwächtesten,Der Kranke ist am geschwächtesten.,The sick is the most debilitated.
+271,impetuous, impulsiv,impulsiver,impulsivsten-,am impulsivsten,Der Jugendliche ist am impulsivsten.,The youth is the most impetuous.
+272,deliberate, bedächtig,bedächtiger,bedächtigsten-,am bedächtigsten,Der Denker ist am bedächtigsten.,The thinker is the most deliberate.
+273,jocular, scherzhaft,scherzhafter,scherzhaftesten-,am scherzhaftesten,Der Witzbold ist am scherzhaftesten.,The joker is the most jocular.
+274,somber, ernst,ernster,ernstesten-,am ernstesten,Die Zeremonie ist am ernstesten.,The ceremony is the most somber.
+275,kindred, verwandt,verwandter,verwandtesten-,am verwandtesten,Die Seele ist am verwandtesten.,The soul is the most kindred.
+276,alien, fremd,fremder,fremdsten-,am fremdsten,Der Ausländer ist am fremdsten.,The foreigner is the most alien.
+277,lissome, gelenkig,gelenkiger,gelenkigsten-,am gelenkigsten,Der Tänzer ist am gelenkigsten.,The dancer is the most lissome.
+278,clunky, klobig,klobiger,klobigsten-,am klobigsten,Der Schuh ist am klobigsten.,The shoe is the clunkiest.
+279,mellifluous, melodisch,melodischer,melodischsten-,am melodischsten,Die Stimme ist am melodischsten.,The voice is the most mellifluous.
+280,harsh, rau,rauer,rausten-,am rauesten,Der Ton ist am rauesten.,The tone is the harshest.
+281,nimble, flink,flinker,flinksten-,am flinksten,Der Dieb ist am flinksten.,The thief is the nimblest.
+282,ponderous, schwerfällig,schwerfälliger,schwerfälligsten-,am schwerfälligsten,Der Elefant ist am schwerfälligsten.,The elephant is the most ponderous.
+283,ostentatious, prunkvoll,prunkvoller,prunkvollsten-,am prunkvollsten,Das Fest ist am prunkvollsten.,The festival is the most ostentatious.
+284,unassuming, bescheiden,bescheidener,bescheidensten-,am bescheidensten,Der Nachbar ist am bescheidensten.,The neighbor is the most unassuming.
+285,pensive, nachdenklich,nachdenklicher,nachdenklichsten-,am nachdenklichsten,Der Philosoph ist am nachdenklichsten.,The philosopher is the most pensive.
+286,frivolous, frivol,frivoler,frivolsten-,am frivolsten,Die Party ist am frivolsten.,The party is the most frivolous.
+287,quixotic, idealistisch,idealistischer,idealistischsten-,am idealistischsten,Der Ritter ist am idealistischsten.,The knight is the most quixotic.
+288,pragmatic, pragmatisch,pragmatischer,pragmatischsten-,am pragmatischsten,Der Geschäftsmann ist am pragmatischsten.,The businessman is the most pragmatic.
+289,rambunctious, ausgelassen,ausgelassener,ausgelassensten-,am ausgelassensten,Die Kinder sind am ausgelassensten.,The children are the most rambunctious.
+290,sedate, gelassen,gelassener,gelassensten-,am gelassensten,Der Yogi ist am gelassensten.,The yogi is the most sedate.
+291,saucy, frech,frecher,frechesten-,am frechesten,Die Katze ist am frechesten.,The cat is the sauciest.
+292,solemn, feierlich,feierlicher,feierlichsten-,am feierlichsten,Die Hochzeit ist am feierlichsten.,The wedding is the most solemn.
+293,supple, geschmeidig,geschmeidiger,geschmeidigsten-,am geschmeidigsten,Der Panther ist am geschmeidigsten.,The panther is the most supple.
+294,rigid, steif,steifer,steifsten-,am steifsten,Der Soldat ist am steifsten.,The soldier is the most rigid.
+295,tangy, würzig,würziger,würzigsten-,am würzigsten,Das Gewürz ist am würzigsten.,The spice is the tangiest.
+296,bland, fade,fader, fadesten-,am fadesten,Das Essen ist am fadesten.,The food is the blandest.
+297,ubiquitous, allgegenwärtig,allgegenwärtiger,allgegenwärtigsten-,am allgegenwärtigsten,Das Smartphone ist am allgegenwärtigsten.,The smartphone is the most ubiquitous.
+298,rare, selten,seltener,seltensten-,am seltensten,Der Diamant ist am seltensten.,The diamond is the rarest.
+299,verbose, wortreich,wortreicher,wortreichsten-,am wortreichsten,Der Redner ist am wortreichsten.,The speaker is the most verbose.
+300,concise, knapp,knapper,knappsten-,am knappsten,Der Stil ist am knappsten.,The style is the most concise.
+301,whimsical, launisch,launischer,launischsten-,am launischsten,Der Elf ist am launischsten.,The elf is the most whimsical.
+302,staid, gesetzt,gesetzter,gesetztsten-,am gesetztsten,Der Professor ist am gesetztsten.,The professor is the most staid.
+303,xeric, trocken,trockener,trockensten-,am trockensten,Die Wüste ist am trockensten.,The desert is the most xeric.
+304,lush, üppig,üppiger,üppigsten-,am üppigsten,Der Dschungel ist am üppigsten.,The jungle is the most lush.
+305,yummy, lecker,leckeren,leckersten-,am leckersten,Das Kuchen ist am leckersten.,The cake is the yummiest.
+306,yucky, eklig,ekliger,ekligsten-,am ekligsten,Der Schleim ist am ekligsten.,The slime is the yuckiest.
+307,zesty, pfeffrig,pfeffriger,pfeffrigsten-,am pfeffrigsten,Die Limone ist am pfeffrigsten.,The lemon is the zesties t.
+308,insipid, fade,fader, fadesten-,am fadesten,Das Getränk ist am fadesten.,The drink is the most insipid.
+309,altruistic, altruistisch,altruistischer,altruistischsten-,am altruistischsten,Der Helfer ist am altruistischsten.,The helper is the most altruistic.
+310,selfish, egoistisch,egoistischer,egoistischsten-,am egoistischsten,Der Egoist ist am egoistischsten.,The egoist is the most selfish.
+311,benevolent, wohlwollend,wohlwollender,wohlwollendsten-,am wohlwollendsten,Der Wohltäter ist am wohlwollendsten.,The benefactor is the most benevolent.
+312,malevolent, bösartig,bösartiger,bösartigsten-,am bösartigsten,Der Schurke ist am bösartigsten.,The villain is the most malevolent.
+313,chaste, keusch,keuscheren,keuschsten-,am keuschsten,Die Nonne ist am keuschsten.,The nun is the chastest.
+314,lewd, lüstern,lüsterner,lüsternsten-,am lüsternsten,Der Schuft ist am lüsternsten.,The rogue is the lewdest.
+315,diligent, fleißig,fleißiger,fleißigsten-,am fleißigsten,Der Arbeiter ist am fleißigsten.,The worker is the most diligent.
+316,slothful, faul,fauler,faulsten-,am faulsten,Der Faulpelz ist am faulsten.,The sloth is the most slothful.
+317,eloquent, eloquent,eloquenter,eloquentesten-,am eloquentesten,Der Redner ist am eloquentesten.,The speaker is the most eloquent.
+318,inarticulate, unartikuliert,unartikulierter,unartikuliertesten-,am unartikuliertesten,Der Stotterer ist am unartikuliertesten.,The stutterer is the most inarticulate.
+319,frugal, sparsam,sparsamer,sparsamsten-,am sparsamsten,Der Sparfuchs ist am sparsamsten.,The saver is the most frugal.
+320,extravagant, extravagant,extravagenter,extravagantesten-,am extravagantesten,Der Star ist am extravagantesten.,The star is the most extravagant.
+321,gregarious, gesellig,geselliger,geselligsten-,am geselligsten,Der Partygänger ist am geselligsten.,The partygoer is the most gregarious.
+322,loner, einsam,einsamer,einsamsten-,am einsamsten,Der Einsiedler ist am einsamsten.,The hermit is the loneliest.
+323,humane, menschlich,menschlicher,menschlichsten-,am menschlichsten,Der Retter ist am menschlichsten.,The rescuer is the most humane.
+324,brutal, brutal,brutaler,brutalsten-,am brutalsten,Der Tyrann ist am brutalsten.,The tyrant is the most brutal.
+325,impartial, unparteiisch,unparteiischer,unparteiischsten-,am unparteiischsten,Der Richter ist am unparteiischsten.,The judge is the most impartial.
+326,biased, voreingenommen,voreingenommener,voreingenommensten-,am voreingenommensten,Der Fan ist am voreingenommensten.,The fan is the most biased.
+327,jovial, jovial,jovialer,jovialsten-,am jovialsten,Der Onkel ist am jovialsten.,The uncle is the most jovial.
+328, surly, mürrisch,mürrischer,mürrischsten-,am mürrischsten,Der Bär ist am mürrischsten.,The bear is the surliest.
+329,kempt, gepflegt,gepflegter,gepflegtsten-,am gepflegtsten,Der Garten ist am gepflegtsten.,The garden is the most kempt.
+330, unkempt, ungepflegt,ungepflegter,ungepflegtsten-,am ungepflegtsten,Der Bart ist am ungepflegtsten.,The beard is the most unkempt.
+331,laconic, lakonisch,lakonischer,lakonischsten-,am lakonischsten,Der Spartaner ist am lakonischsten.,The Spartan is the most laconic.
+332, loquacious, gesprächig,gesprächiger,gesprächigsten-,am gesprächigsten,Der Schwätzer ist am gesprächigsten.,The chatterer is the most loquacious.
+333,magnanimous, großmütig,großmütiger,großmütigsten-,am großmütigsten,Der Held ist am großmütigsten.,The hero is the most magnanimous.
+334, petty, kleinlich,kleinlicher,kleinlichsten-,am kleinlichsten,Der Nachbar ist am kleinlichsten.,The neighbor is the pettiest.
+335,noble, edel,edler,edelsten-,am edelsten,Der Prinz ist am edelsten.,The prince is the noblest.
+336, ignoble, unehrlich,unehrlicher,unehrlichsten-,am unehrlichsten,Der Lügner ist am unehrlichsten.,The liar is the most ignoble.
+337,obdurate, hartnäckig,hartnäckiger,hartnäckigsten-,am hartnäckigsten,Der Maultier ist am hartnäckigsten.,The mule is the most obdurate.
+338, compliant, gefügig,gefügiger,gefügigsten-,am gefügigsten,Das Lamm ist am gefügigsten.,The lamb is the most compliant.
+339,palatable, genießbar,genießbarer,genießbarsten-,am genießbarsten,Das Essen ist am genießbarsten.,The food is the most palatable.
+340, unpalatable, ungenießbar,ungenießbarer,ungenießbarsten-,am ungenießbarsten,Der Brei ist am ungenießbarsten.,The mush is the most unpalatable.
+341,quiescent, ruhig,ruhiger,ruhigsten-,am ruhigsten,Der See ist am ruhigsten.,The lake is the most quiescent.
+342, tumultuous, stürmisch,stürmischer,stürmischsten-,am stürmischsten,Das Meer ist am stürmischsten.,The sea is the most tumultuous.
+343,resilient, widerstandsfähig,widerstandsfähiger,widerstandsfähigsten-,am widerstandsfähigsten,Der Baum ist am widerstandsfähigsten.,The tree is the most resilient.
+344, fragile, zerbrechlich,zerbrechlicher,zerbrechlichsten-,am zerbrechlichsten,Das Porzellan ist am zerbrechlichsten.,The porcelain is the most fragile.
+345,sanguine, optimistisch,optimistischer,optimistischsten-,am optimistischsten,Der Investor ist am optimistischsten.,The investor is the most sanguine.
+346, pessimistic, pessimistisch,pessimistischer,pessimistischsten-,am pessimistischsten,Der Prophet ist am pessimistischsten.,The prophet is the most pessimistic.
+347,tacit, stillschweigend,stillschweigender,stillschweigendsten-,am stillschweigendsten,Die Zustimmung ist am stillschweigendsten.,The consent is the most tacit.
+348, vocal, lautstark,lautstärker,lautstärksten-,am lautstärksten,Der Protest ist am lautstärksten.,The protest is the most vocal.
+349,unassuming, unprätentiös,unprätentiöser,unprätentiösesten-,am unprätentiösesten,Der Dichter ist am unprätentiösesten.,The poet is the most unassuming.
+350, pretentious, prätentiös,prätentiöser,prätentiösesten-,am prätentiösesten,Der Künstler ist am prätentiösesten.,The artist is the most pretentious.
+351,veracious, wahrheitsliebend,wahrheitsliebender,wahrheitsliebendsten-,am wahrheitsliebendsten,Der Zeuge ist am wahrheitsliebendsten.,The witness is the most veracious.
+352, mendacious, lügnerisch,lügnerischer,lügnerischsten-,am lügnerischsten,Der Schwindler ist am lügnerischsten.,The swindler is the most mendacious.
+353,wistful, wehmütig,wehmütiger,wehmütigsten-,am wehmütigsten,Der Träumer ist am wehmütigsten.,The dreamer is the most wistful.
+354, ebullient, überschwänglich,überschwänglicher,überschwänglichsten-,am überschwänglichsten,Die Feier ist am überschwänglichsten.,The celebration is the most ebullient.
+355, xenial, gastfreundlich,gastfreundlicher,gastfreundlichsten-,am gastfreundlichsten,Der Wirt ist am gastfreundlichsten.,The host is the most xenial.
+356, hostile, feindselig,feindseliger,feindseligsten-,am feindseligsten,Der Feind ist am feindseligsten.,The enemy is the most hostile.
+357, zesty, lebhaft,lebhafter,lebhaftesten-,am lebhaftesten,Die Limonade ist am lebhaftesten.,The lemonade is the zest iest.
+358, vapid, fade,fader, fadesten-,am fadesten,Die Rede ist am fadesten.,The speech is the most vapid.
+359, affable, umgänglich,umgänglicher,umgänglichsten-,am umgänglichsten,Der Kollege ist am umgänglichsten.,The colleague is the most affable.
+360, aloof, distanziert,distanzierten,distanziertesten-,am distanziertesten,Der Künstler ist am distanziertesten.,The artist is the most aloof.
+361, buoyant, schwimmfähig,schwimmfähiger,schwimmfähigsten-,am schwimmfähigsten,Der Ball ist am schwimmfähigsten.,The ball is the most buoyant.
+362, leaden, bleiern,bleierner,bleiernsten-,am bleiernsten,Die Stimmung ist am bleiernsten.,The mood is the most leaden.
+363, cogent, überzeugend,überzeugender,überzeugendsten-,am überzeugendsten,Das Argument ist am überzeugendsten.,The argument is the most cogent.
+364, fallacious, trügerisch,trügerischer,trügerischsten-,am trügerischsten,Der Schein ist am trügerischsten.,The illusion is the most fallacious.
+365, decorous, schicklich,schicklicher,schicklichsten-,am schicklichsten,Die Etikette ist am schicklichsten.,The etiquette is the most decorous.
+366, indecorous, unanständig,unanständiger,unanständigsten-,am unanständigsten,Der Witz ist am unanständigsten.,The joke is the most indecorous.
+367, effervescent, sprudelnd,sprudelnder,sprudelndsten-,am sprudelndsten,Das Soda ist am sprudelndsten.,The soda is the most effervescent.
+368, flat, flau,fla uer,flausten-,am flausten,Das Bier ist am flausten.,The beer is the flattest.
+369, fastidious, pingelig,pingeliger,pingeligsten-,am pingeligsten,Der Perfektionist ist am pingeligsten.,The perfectionist is the most fastidious.
+370, sloppy, nachlässig,nachlässiger,nachlässigsten-,am nachlässigsten,Die Arbeit ist am nachlässigsten.,The work is the sloppiest.
+371, gallant, galant,galanter,galantesten-,am galantesten,Der Ritter ist am galantesten.,The knight is the most gallant.
+372, churlish, grob,grober,grobsten-,am grobsten,Der Bauer ist am grobsten.,The peasant is the most churlish.
+373, halcyon, friedlich,friedlicher,friedlichsten-,am friedlichsten,Die Zeit ist am friedlichsten.,The time is the most halcyon.
+374, stormy, stürmisch,stürmischer,stürmischsten-,am stürmischsten,Das Wetter ist am stürmischsten.,The weather is the most stormy.
+375, incisive, schneidend,schneidender,schneidendsten-,am schneidendsten,Die Kritik ist am schneidendsten.,The criticism is the most incisive.
+376, vague, vage,vager,vagesten-,am vagesten,Die Beschreibung ist am vagesten.,The description is the vaguest.
+377, jaunty, munter,munterer,muntersten-,am muntersten,Der Spaziergänger ist am muntersten.,The walker is the jauntiest.
+378, morose, trübsinnig,trübsinniger,trübsinnigsten-,am trübsinnigsten,Der Denker ist am trübsinnigsten.,The thinker is the most morose.
+379, kinky, versponnen,versponnener,versponnensten-,am versponnensten,Die Idee ist am versponnensten.,The idea is the kinkiest.
+380, straight, gerade,gerader,geradesten-,am geradesten,Der Weg ist am geradesten.,The path is the straightest.
+381, lithe, geschmeidig,geschmeidiger,geschmeidigsten-,am geschmeidigsten,Die Schlange ist am geschmeidigsten.,The snake is the lithest.
+382, bulky, klobig,klobiger,klobigsten-,am klobigsten,Der Kühlschrank ist am klobigsten.,The fridge is the bulkiest.
+383, meticulous, akribisch,akribischer,akribischsten-,am akribischsten,Der Wissenschaftler ist am akribischsten.,The scientist is the most meticulous.
+384, careless, sorglos,sorgloser,sorglosesten-,am sorglosesten,Der Abenteurer ist am sorglosesten.,The adventurer is the most careless.
+385, nubile, reif,reifer,reifsten-,am reifsten,Die Frucht ist am reifsten.,The fruit is the most nubile.
+386, withered, verwelkt,verwelkter,verwelktsten-,am verwelktsten,Die Blume ist am verwelktsten.,The flower is the most withered.
+387, opulent, prachtvoll,prachtvoller,prachtvollsten-,am prachtvollsten,Der Saal ist am prachtvollsten.,The hall is the most opulent.
+388, spartan, spartanisch,spartanischer,spartanischsten-,am spartanischsten,Das Lager ist am spartanischsten.,The camp is the most spartan.
+389, plucky, mutig,mutiger,mutigsten-,am mutigsten,Der Kleine ist am mutigsten.,The small one is the pluckiest.
+390, cowardly, feige,feiger,feigsten-,am feigsten,Der Feigling ist am feigsten.,The coward is the most cowardly.
+391, rakish, schneidig,schneidiger,schneidigsten-,am schneidigsten,Der Pirat ist am schneidigsten.,The pirate is the most rakish.
+392, dowdy, unmodisch,unmodischer,unmodischsten-,am unmodischsten,Das Kleid ist am unmodischsten.,The dress is the dowdiest.
+393, sassy, frech,frecher,frechesten-,am frechesten,Die Göre ist am frechesten.,The brat is the sassiest.
+394, demure, züchtig,züchtiger,züchtigsten-,am züchtigsten,Die Jungfrau ist am züchtigsten.,The maiden is the most demure.
+395, truculent, streitlustig,streitlustiger,streitlustigsten-,am streitlustigsten,Der Krieger ist am streitlustigsten.,The warrior is the most truculent.
+396, pacific, friedliebend,friedliebender,friedliebendsten-,am friedliebendsten,Der Diplomat ist am friedliebendsten.,The diplomat is the most pacific.
+397, unkempt, zerzaust,zerzauster,zerzaustesten-,am zerzaustesten,Der Vagabund ist am zerzaustesten.,The vagrant is the most unkempt.
+398, groomed, gepflegt,gepflegter,gepflegtsten-,am gepflegtsten,Der Hund ist am gepflegtsten.,The dog is the most groomed.
+399, vapid, inhaltslos,inhaltsloser,inhaltslosesten-,am inhaltslosesten,Der Film ist am inhaltslosesten.,The movie is the most vapid.
+400, profound, tiefgründig,tiefgründiger,tiefgründigsten-,am tiefgründigsten,Das Buch ist am tiefgründigsten.,The book is the most profound.
+401, winsome, anmutig,anmutiger,anmutigsten-,am anmutigsten,Das Kind ist am anmutigsten.,The child is the most winsome.
+402, forlorn, verlassen,verlassener,verlassensten-,am verlassensten,Der Hund ist am verlassensten.,The dog is the most forlorn.
+403, xanthic, gelblich,gelblicher,gelblichsten-,am gelblichsten,Die Banane ist am gelblichsten.,The banana is the most xanthic.
+404, achromatic, farblos,farbloser,farblosesten-,am farblosesten,Die Wand ist am farblosesten.,The wall is the most achromatic.
+405, yare, wendig, wendiger,wendigsten-,am wendigsten,Das Boot ist am wendigsten.,The boat is the yarest.
+406, lumbering, schwerfällig,schwerfälliger,schwerfälligsten-,am schwerfälligsten,Der Bär ist am schwerfälligsten.,The bear is the most lumbering.
+407, zingy, prickelnd,prickelnder,prickelndsten-,am prickelndsten,Das Getränk ist am prickelndsten.,The drink is the most zingy.
+408, dull, stumpf,stumpfer,stumpfsten-,am stumpfsten,Die Klinge ist am stumpfsten.,The blade is the dullest.
+409, alacrity, eifrig,eifriger,eifrigsten-,am eifrigsten,Der Helfer ist am eifrigsten.,The helper is the most alacritous.
+410, torpid, träge,träger,trägsten-,am trägsten,Die Schlange ist am trägsten.,The snake is the most torpid.
+411, buxom, üppig,üppiger,üppigsten-,am üppigsten,Die Bäuerin ist am üppigsten.,The farmwoman is the buxomest.
+412, gaunt, hager,hagerer,hagersten-,am hagersten,Der Hungerleider ist am hagersten.,The starving is the gauntest.
+413, clement, mild,milder,mildesten-,am mildesten,Das Klima ist am mildesten.,The climate is the most clement.
+414, inclement, unfreundlich,unfreundlicher,unfreundlichsten-,am unfreundlichsten,Das Wetter ist am unfreundlichsten.,The weather is the most inclement.
+415, doughty, tapfer,tapferer,tapfersten-,am tapfersten,Der Held ist am tapfersten.,The hero is the doughtiest.
+416, craven, feige,feiger,feigsten-,am feigsten,Der Feigling ist am feigsten.,The coward is the cravenest.
+417, ebony, ebenholzschwarz,ebenholzschwarzer,ebenholzschwarzesten-,am ebenholzschwarzesten,Das Holz ist am ebenholzschwarzesten.,The wood is the eboniest.
+418, ivory, elfenbeinweiß,elfenbeinweißer,elfenbeinweißesten-,am elfenbeinweißesten,Das Geweih ist am elfenbeinweißesten.,The tusk is the ivoriest.
+419, fey, feehaft,feehafter,feehaftesten-,am feehaftesten,Der Elf ist am feehaftesten.,The elf is the feyest.
+420, mundane, weltlich,weltlicher,weltlichsten-,am weltlichsten,Das Leben ist am weltlichsten.,The life is the mundanest.
+421, gossamer, gazenhaft,gazenhafter,gazenhaftesten-,am gazenhaftesten,Der Faden ist am gazenhaftesten.,The thread is the gossamerest.
+422, dense, dicht,dichter,dichtesten-,am dichtesten,Der Nebel ist am dichtesten.,The fog is the densest.
+423, halcyon, idyllisch,idyllischer,idyllischsten-,am idyllischsten,Die Insel ist am idyllischsten.,The island is the most halcyon.
+424, tempestuous, stürmisch,stürmischer,stürmischsten-,am stürmischsten,Die Beziehung ist am stürmischsten.,The relationship is the most tempestuous.
+425, iridescent, schillernd,schillernder,schillerndsten-,am schillerndsten,Die Schale ist am schillerndsten.,The shell is the most iridescent.
+426, drab, farblos,farbloser,farblosesten-,am farblosesten,Die Wand ist am farblosesten.,The wall is the drabbest.
+427, jaunty, schwungvoll,schwungvoller,schwungvollsten-,am schwungvollsten,Der Hut ist am schwungvollsten.,The hat is the jauntiest.
+428, lugubrious, trauervoll,trauervoller,trauervollsten-,am trauervollsten,Der Sarg ist am trauervollsten.,The coffin is the most lugubrious.
+429, mercurial, launisch,launischer,launischsten-,am launischsten,Der Gott ist am launischsten.,The god is the most mercurial.
+430, steadfast, beständig,beständiger,beständigsten-,am beständigsten,Die Liebe ist am beständigsten.,The love is the most steadfast.
+431, nebulous, neblig,nebliger,nebligsten-,am nebligsten,Die Idee ist am nebligsten.,The idea is the most nebulous.
+432, lucid, klar,klarer,klaresten-,am klarsten,Der Gedanke ist am klarsten.,The thought is the most lucid.
+433, ornate, verziert,verzierter,verziertesten-,am verziertesten,Das Möbel ist am verziertesten.,The furniture is the most ornate.
+434, austere, karg,karger,kargesten-,am kargesten,Der Raum ist am kargesten.,The room is the most austere.
+435, pellucid, durchsichtig,durchsichtiger,durchsichtigsten-,am durchsichtigsten,Das Glas ist am durchsichtigsten.,The glass is the most pellucid.
+436, opaque, undurchsichtig,undurchsichtiger,undurchsichtigsten-,am undurchsichtigsten,Der Vorhang ist am undurchsichtigsten.,The curtain is the most opaque.
+437, quiescent, ruhend,ruhender,ruhendsten-,am ruhendsten,Der Vulkan ist am ruhendsten.,The volcano is the most quiescent.
+438, active, aktiv,aktiver,aktivsten-,am aktivsten,Der Vulkan ist am aktivsten.,The volcano is the most active.
+439, resplendent, strahlend,strahlender,strahlendsten-,am strahlendsten,Der Diamant ist am strahlendsten.,The diamond is the most resplendent.
+440, lackluster, matt,matter,mattesten-,am mattesten,Der Stern ist am mattesten.,The star is the most lackluster.
+441, sagacious, weise,weiser,weisesten-,am weisesten,Der Eule ist am weisesten.,The owl is the most sagacious.
+442, foolish, töricht,töricht er,törichtesten-,am törichtesten,Der Narr ist am törichtesten.,The fool is the most foolish.
+443, tenacious, zäh,zäher,zähsten-,am zähsten,Der Kämpfer ist am zähsten.,The fighter is the most tenacious.
+444, yielding, nachgebend,nachgebender,nachgebendsten-,am nachgebendsten,Der Schnee ist am nachgebendsten.,The snow is the most yielding.
+445, urbane, urban,urbaner,urbansten-,am urbansten,Der Städter ist am urbansten.,The city dweller is the most urbane.
+446, rustic, rustikal,rustikaler,rustikalsten-,am rustikalsten,Der Bauer ist am rustikalsten.,The farmer is the most rustic.
+447, verve, schwungvoll,schwungvoller,schwungvollsten-,am schwungvollsten,Der Tänzer ist am schwungvollsten.,The dancer is the most verve-filled.
+448, lethargic, lethargisch,lethargischer,lethargischsten-,am lethargischsten,Der Bär ist am lethargischsten.,The bear is the most lethargic.
+449, whimsical, skurril,skurriler,skurrilsten-,am skurrilsten,Der Clown ist am skurrilsten.,The clown is the most whimsical.
+450, conventional, konventionell,konventioneller,konventionellsten-,am konventionellsten,Der Beamte ist am konventionellsten.,The official is the most conventional.
+451, xenodochial, gastfreundlich,gastfreundlicher,gastfreundlichsten-,am gastfreundlichsten,Der Fremdenführer ist am gastfreundlichsten.,The tour guide is the most xenodochial.
+452, xenophobic, xenophob,xenophober,xenophobsten-,am xenophobsten,Der Isolationist ist am xenophobsten.,The isolationist is the most xenophobic.
+453, yare, bereitwillig, bereitwilliger,bereitwilligsten-,am bereitwilligsten,Der Matrose ist am bereitwilligsten.,The sailor is the yarest.
+454, yokelish, bäuerlich,bäuerlicher,bäuerlichsten-,am bäuerlichsten,Der Dorfbewohner ist am bäuerlichsten.,The villager is the most yokelish.
+455, zappy, energiegeladen,energiegeladener,energiegeladensten-,am energiegeladensten,Der Film ist am energiegeladensten.,The movie is the zappiest.
+456, zonked, erschöpft,erschöpfter,erschöpftesten-,am erschöpftesten,Der Arbeiter ist am erschöpftesten.,The worker is the most zonked.
+457, zoolike, tierisch,tierischer,tierischsten-,am tierischsten,Der Wrestler ist am tierischsten.,The wrestler is the most zoolike.
+458, zany, zickig,zickiger,zickigsten-,am zickigsten,Die Katze ist am zickigsten.,The cat is the zaniest.
+459, zealous, eifernd,eifernder,eiferndsten-,am eiferndsten,Der Missionar ist am eiferndsten.,The missionary is the most zealous.
+460, apathetic, apathisch,apathischer,apathischsten-,am apathischsten,Der Zyniker ist am apathischsten.,The cynic is the most apathetic.
+461, ablaze, lodernd,lodernder,loderndsten-,am loderndsten,Das Feuer ist am loderndsten.,The fire is the most ablaze.
+462, extinguished, erloschen,erloschener,erloschensten-,am erloschensten,Die Flamme ist am erloschensten.,The flame is the most extinguished.
+463, beauteous, schön,schöner,schönsten-,am schönsten,Die Rose ist am schönsten.,The rose is the most beauteous.
+464, hideous, hässlich,hässlicher,hässlichsten-,am hässlichsten,Das Biest ist am hässlichsten.,The beast is the most hideous.
+465, clementine, mild,milder,mildesten-,am mildesten,Das Obst ist am mildesten.,The fruit is the most clementine-like.
+466, acerbic, sauer,saurer,sauersten-,am sauersten,Der Apfel ist am sauersten.,The apple is the most acerbic.
+467, dulcet, süß,süßer,süßesten-,am süßesten,Die Melodie ist am süßesten.,The melody is the most dulcet.
+468, cacophonous, kakophonisch,kakophonischer,kakophonischsten-,am kakophonischsten,Der Lärm ist am kakophonischsten.,The noise is the most cacophonous.
+469, ebullient, sprudelnd,sprudelnder,sprudelndsten-,am sprudelndsten,Die Quelle ist am sprudelndsten.,The spring is the most ebullient.
+470, stagnant, stehend,stehender,stehendsten-,am stehendsten,Der Teich ist am stehendsten.,The pond is the most stagnant.
+471, fervent, glühend,glühender,glühendsten-,am glühendsten,Die Leidenschaft ist am glühendsten.,The passion is the most fervent.
+472, tepid, lauwarm,lauwarm er,lauwar msten-,am lauwarmsten,Das Wasser ist am lauwarmsten.,The water is the most tepid.
+473, gossamery, fein,feiner,feinsten-,am feinsten,Der Seidenfaden ist am feinsten.,The silk thread is the most gossamery.
+474, coarse, grob,grober,grobsten-,am grobsten,Der Stoff ist am grobsten.,The fabric is the coarsest.
+475, halcyonic, friedvoll,friedvoller,friedvollsten-,am friedvollsten,Der Morgen ist am friedvollsten.,The morning is the most halcyonic.
+476, belligerent, kriegerisch,kriegerischer,kriegerischsten-,am kriegerischsten,Der Soldat ist am kriegerischsten.,The soldier is the most belligerent.
+477, idyllic, idyllisch,idyllischer,idyllischsten-,am idyllischsten,Das Tal ist am idyllischsten.,The valley is the most idyllic.
+478, dystopian, dystopisch,dystopischer,dystopischsten-,am dystopischsten,Die Stadt ist am dystopischsten.,The city is the most dystopian.
+479, jubilant, jubelnd,jubelnder,jubelndsten-,am jubelndsten,Die Menge ist am jubelndsten.,The crowd is the most jubilant.
+480, doleful, traurig,trauriger,traurigsten-,am traurigsten,Der Klagelied ist am traurigsten.,The lament is the most doleful.
+481, kinetic, kinetisch,kinetischer,kinetischsten-,am kinetischsten,Der Motor ist am kinetischsten.,The engine is the most kinetic.
+482, static, statisch,statischer,statischsten-,am statischsten,Das Bild ist am statischsten.,The picture is the most static.
+483, luminous, leuchtend,leuchtender,leuchtendsten-,am leuchtendsten,Der Mond ist am leuchtendsten.,The moon is the most luminous.
+484, obscure, dunkel,dunkler,dunkelsten-,am dunkelsten,Der Pfad ist am dunkelsten.,The path is the most obscure.
+485, mellifluous, fließend,fließender,fließendsten-,am fließendsten,Der Strom ist am fließendsten.,The stream is the most mellifluous.
+486, discordant, dissonant,dissonanter,dissonantesten-,am dissonantesten,Die Töne sind am dissonantesten.,The tones are the most discordant.
+487, nascent, aufkeimend,aufkeimender,aufkeimendsten-,am aufkeimendsten,Die Idee ist am aufkeimendsten.,The idea is the most nascent.
+488, moribund, sterbend,sterbender,sterbendsten-,am sterbendsten,Die Tradition ist am sterbendsten.,The tradition is the most moribund.
+489, opalescent, opaleszent,opaleszenter,opaleszentesten-,am opaleszentesten,Die Perle ist am opaleszentesten.,The pearl is the most opalescent.
+490, pallid, blass,blasser,blassesten-,am blassesten,Der Mond ist am blassesten.,The moon is the most pallid.
+491, quiescent, schlummernd,schlummernder,schlummerndsten-,am schlummerndsten,Der Wald ist am schlummerndsten.,The forest is the most quiescent.
+492, rampant, grassierend,grassierender,grassierendsten-,am grassierendsten,Die Krankheit ist am grassierendsten.,The disease is the most rampant.
+493, resurgent, wiederauflebend,wiederauflebender,wiederauflebendsten-,am wiederauflebendsten,Die Mode ist am wiederauflebendsten.,The fashion is the most resurgent.
+494, receding, zurückweichend,zurückweichender,zurückweichendsten-,am zurückweichendsten,Das Haar ist am zurückweichendsten.,The hair is the most receding.
+495, salubrious, gesundheitsfördernd,gesundheitsfördernder,gesundheitsförderndsten-,am gesundheitsförderndsten,Die Luft ist am gesundheitsförderndsten.,The air is the most salubrious.
+496, noxious, schädlich,schädlicher,schädlichsten-,am schädlichsten,Der Rauch ist am schädlichsten.,The smoke is the most noxious.
+497, transient, flüchtig,flüchtiger,flüchtigsten-,am flüchtigsten,Der Traum ist am flüchtigsten.,The dream is the most transient.
+498, perennial, dauerhaft,dauerhafter,dauerhaftesten-,am dauerhaftesten,Die Rose ist am dauerhaftesten.,The rose is the most perennial.
+499, ubiquitous, omnipräsent,omnipräsenter,omnipräsentesten-,am omnipräsentesten,Das Internet ist am omnipräsentesten.,The internet is the most ubiquitous.
+500, sporadic, sporadisch,sporadischer,sporadischsten-,am sporadischsten,Der Regen ist am sporadischsten.,The rain is the most sporadic.`;
+// ==========================================================
+
+let words = [];
+let current = null;
+
+const results = Papa.parse(csvText.trim(), { header: true, skipEmptyLines: true });
+words = results.data.map((row, i) => ({
+  id: i,
+  positive: row["Positive (Positiv)"].trim(),
+  german: `${row["Positive (Positiv)"]} → ${row["Comparative (Komparativ)"]} → ${row["Superlative_with_am (am + Superlativ)"]}`,
+  english: `${row.English} → ${row["Comparative (Komparativ)"]} → ${row["Superlative_with_am (am + Superlativ)"]}`,
+  example_german: row.Example_Sentence,
+  example_english: row.Translation,
+  seen: 0,
+  mastery: 0,
+  notes: []
+}));
+
+// Load progress
+const saved = localStorage.getItem('germanAdjectivesApp');
+if (saved) {
+  const prog = JSON.parse(saved);
+  words.forEach(w => {
+    const p = prog.find(x => x.id === w.id);
+    if (p) { w.seen = p.seen; w.mastery = p.mastery; w.notes = p.notes || []; }
+  });
+}
+
+pickNext();
+
+function pickNext() {
+  const weighted = words.flatMap(w => Array(Math.max(1, 6 - w.mastery)).fill(w));
+  current = weighted[Math.floor(Math.random() * weighted.length)];
+  showCard();
+}
+
+function showCard() {
+  document.getElementById('currentWord').textContent = current.positive;
+  document.getElementById('card').innerHTML = `
+    <div class="german">${current.german}</div>
+    <div class="english">${current.english}</div>
+    ${current.example_german ? `<div class="example">${current.example_german}<br><br>${current.example_english}</div>` : ''}
+    <div class="stats">Seen: ${current.seen}× • Mastery: ${'⭐'.repeat(current.mastery)}${'☆'.repeat(5 - current.mastery)}</div>
+  `;
+  document.getElementById('noteInput').value = '';
+  showNotes();
+}
+
+function nextCard() {
+  current.seen++;
+  current.mastery = Math.min(5, current.mastery + 1);
+  saveProgress();
+  pickNext();
+}
+
+function saveNote() {
+  const txt = document.getElementById('noteInput').value.trim();
+  if (!txt) return;
+  current.notes.push(`${new Date().toLocaleString('de-DE')}: ${txt}`);
+  saveProgress();
+  document.getElementById('noteInput').value = '';
+  showNotes();
+}
+
+function showNotes() {
+  const list = document.getElementById('notesList');
+  if (!current.notes || current.notes.length === 0) {
+    list.innerHTML = '<p style="text-align:center;opacity:0.6;font-style:italic;">No notes yet – add one!</p>';
+  } else {
+    list.innerHTML = current.notes.map(n => `<div class="note">${n}</div>`).join('');
+  }
+}
+
+function saveProgress() {
+  const progress = words.map(w => ({id: w.id, seen: w.seen, mastery: w.mastery, notes: w.notes}));
+  localStorage.setItem('germanAdjectivesApp', JSON.stringify(progress));
+}
+
+// Allow Enter key in textarea to save note
+document.getElementById('noteInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); saveNote(); }
+});
+</script>
+</body>
+</html>
